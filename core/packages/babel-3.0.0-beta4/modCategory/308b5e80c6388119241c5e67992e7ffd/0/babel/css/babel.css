@@ -1,0 +1,20 @@
+/**
+ * Babel CSS file
+ * 
+ * @author goldsky <goldsky@virtudraft.com>
+ *
+ * @package babel
+ */
+
+.icon-link {
+    background-image: url(../icons/link.png) !important;
+}
+.icon-unlink {
+    background-image: url(../icons/link_break.png) !important;
+}
+.icon-page-go {
+    background-image: url(../icons/page_go.png) !important;
+}
+.icon-pencil-go {
+    background-image: url(../icons/pencil_go.png) !important;
+}

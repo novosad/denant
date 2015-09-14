@@ -1,0 +1,12 @@
+<?php return array (
+  'preserve_keys' => true,
+  'update_object' => true,
+  'vehicle_package' => 'transport',
+  'vehicle_class' => 'xPDOObjectVehicle',
+  'guid' => 'cf9bd7f429ec5612b92d14de8aefd7ab',
+  'package' => 'modx',
+  'class' => 'modEvent',
+  'signature' => '5d5001281bc0b4753c42b2cc3c8f8461',
+  'native_key' => 'OnContextSave',
+  'object' => '{"name":"OnContextSave","service":1,"groupname":"Contexts"}',
+);

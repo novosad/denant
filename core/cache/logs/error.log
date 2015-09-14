@@ -1,0 +1,123 @@
+[2015-09-03 21:51:48] (ERROR @ Z:\home\denant.loc\www\core\model\modx\xmlrss\rssfetch.class.php : 241) User warning: MagpieRSS: Failed to fetch http://feeds.feedburner.com/modx-announce (HTTP Error: connection failed (1006)
+[2015-09-03 21:51:49] (ERROR @ Z:\home\denant.loc\www\core\model\modx\xmlrss\rssfetch.class.php : 241) User warning: MagpieRSS: Failed to fetch http://forums.modx.com/board.xml?board=294 (HTTP Error: connection failed (1006)
+[2015-09-03 21:59:18] (ERROR @ Z:\home\denant.loc\www\core\model\modx\xmlrss\rssfetch.class.php : 241) User warning: MagpieRSS: Failed to fetch http://feeds.feedburner.com/modx-announce (HTTP Error: connection failed (1006)
+[2015-09-03 21:59:19] (ERROR @ Z:\home\denant.loc\www\core\model\modx\xmlrss\rssfetch.class.php : 241) User warning: MagpieRSS: Failed to fetch http://forums.modx.com/board.xml?board=294 (HTTP Error: connection failed (1006)
+[2015-09-03 22:00:04] (ERROR @ Z:\home\denant.loc\www\core\model\modx\xmlrss\rssfetch.class.php : 241) User warning: MagpieRSS: Failed to fetch http://feeds.feedburner.com/modx-announce (HTTP Error: connection failed (1006)
+[2015-09-03 22:00:05] (ERROR @ Z:\home\denant.loc\www\core\model\modx\xmlrss\rssfetch.class.php : 241) User warning: MagpieRSS: Failed to fetch http://forums.modx.com/board.xml?board=294 (HTTP Error: connection failed (1006)
+[2015-09-03 22:00:46] (ERROR @ Z:\home\denant.loc\www\core\model\modx\xmlrss\rssfetch.class.php : 241) User warning: MagpieRSS: Failed to fetch http://feeds.feedburner.com/modx-announce (HTTP Error: connection failed (1006)
+[2015-09-03 22:00:47] (ERROR @ Z:\home\denant.loc\www\core\model\modx\xmlrss\rssfetch.class.php : 241) User warning: MagpieRSS: Failed to fetch http://forums.modx.com/board.xml?board=294 (HTTP Error: connection failed (1006)
+[2015-09-03 22:01:35] (ERROR @ Z:\home\denant.loc\www\core\model\modx\xmlrss\rssfetch.class.php : 241) User warning: MagpieRSS: Failed to fetch http://feeds.feedburner.com/modx-announce (HTTP Error: connection failed (1006)
+[2015-09-03 22:01:36] (ERROR @ Z:\home\denant.loc\www\core\model\modx\xmlrss\rssfetch.class.php : 241) User warning: MagpieRSS: Failed to fetch http://forums.modx.com/board.xml?board=294 (HTTP Error: connection failed (1006)
+[2015-09-03 22:02:20] (ERROR @ Z:\home\denant.loc\www\core\model\modx\xmlrss\rssfetch.class.php : 241) User warning: MagpieRSS: Failed to fetch http://feeds.feedburner.com/modx-announce (HTTP Error: connection failed (1006)
+[2015-09-03 22:02:21] (ERROR @ Z:\home\denant.loc\www\core\model\modx\xmlrss\rssfetch.class.php : 241) User warning: MagpieRSS: Failed to fetch http://forums.modx.com/board.xml?board=294 (HTTP Error: connection failed (1006)
+[2015-09-03 22:02:30] (ERROR @ Z:\home\denant.loc\www\core\model\modx\xmlrss\rssfetch.class.php : 241) User warning: MagpieRSS: Failed to fetch http://feeds.feedburner.com/modx-announce (HTTP Error: connection failed (1006)
+[2015-09-03 22:02:31] (ERROR @ Z:\home\denant.loc\www\core\model\modx\xmlrss\rssfetch.class.php : 241) User warning: MagpieRSS: Failed to fetch http://forums.modx.com/board.xml?board=294 (HTTP Error: connection failed (1006)
+[2015-09-03 22:03:32] (ERROR @ /connectors/index.php) Could not connect to provider at: http://rest.modx.com/extras/
+[2015-09-03 22:03:32] (ERROR in modTransportProvider::find @ Z:\home\denant.loc\www\core\model\modx\transport\modtransportprovider.class.php : 271) MODX получил пустой ответ от поставщика. Пожалуйста, проверьте URL-адрес поставщика и убедитесь, что поставщик является корректным поставщиком.
+[2015-09-03 22:03:32] (ERROR @ /connectors/index.php) Could not connect to provider at: http://rest.modx.com/extras/
+[2015-09-03 22:03:32] (ERROR in modTransportProvider::find @ Z:\home\denant.loc\www\core\model\modx\transport\modtransportprovider.class.php : 271) MODX получил пустой ответ от поставщика. Пожалуйста, проверьте URL-адрес поставщика и убедитесь, что поставщик является корректным поставщиком.
+[2015-09-04 13:10:29] (ERROR @ Z:\home\denant.loc\www\core\model\modx\xmlrss\rssfetch.class.php : 241) User warning: MagpieRSS: Failed to fetch http://feeds.feedburner.com/modx-announce (HTTP Error: connection failed (1006)
+[2015-09-04 13:10:30] (ERROR @ Z:\home\denant.loc\www\core\model\modx\xmlrss\rssfetch.class.php : 241) User warning: MagpieRSS: Failed to fetch http://forums.modx.com/board.xml?board=294 (HTTP Error: connection failed (1006)
+[2015-09-04 15:28:14] (ERROR @ /connectors/index.php) Could not connect to provider at: http://rest.modx.com/extras/
+[2015-09-04 15:28:14] (ERROR in modTransportProvider::find @ Z:\home\denant.loc\www\core\model\modx\transport\modtransportprovider.class.php : 271) MODX получил пустой ответ от поставщика. Пожалуйста, проверьте URL-адрес поставщика и убедитесь, что поставщик является корректным поставщиком.
+[2015-09-04 15:28:14] (ERROR @ /connectors/index.php) Could not connect to provider at: http://rest.modx.com/extras/
+[2015-09-04 15:28:15] (ERROR in modTransportProvider::find @ Z:\home\denant.loc\www\core\model\modx\transport\modtransportprovider.class.php : 271) MODX получил пустой ответ от поставщика. Пожалуйста, проверьте URL-адрес поставщика и убедитесь, что поставщик является корректным поставщиком.
+[2015-09-04 15:28:48] (ERROR @ /connectors/index.php) Could not connect to provider at: http://rest.modx.com/extras/
+[2015-09-04 15:28:48] (ERROR @ /connectors/index.php) Could not connect to provider at: http://rest.modx.com/extras/
+[2015-09-04 15:28:48] (ERROR in modTransportProvider::stats @ Z:\home\denant.loc\www\core\model\modx\transport\modtransportprovider.class.php : 135) MODX получил пустой ответ от поставщика. Пожалуйста, проверьте URL-адрес поставщика и убедитесь, что поставщик является корректным поставщиком.
+[2015-09-04 15:28:56] (ERROR @ /connectors/index.php) Could not connect to provider at: http://rest.modx.com/extras/
+[2015-09-04 15:28:56] (ERROR in modTransportProvider::find @ Z:\home\denant.loc\www\core\model\modx\transport\modtransportprovider.class.php : 271) MODX получил пустой ответ от поставщика. Пожалуйста, проверьте URL-адрес поставщика и убедитесь, что поставщик является корректным поставщиком.
+[2015-09-04 15:28:56] (ERROR @ /connectors/index.php) Could not connect to provider at: http://rest.modx.com/extras/
+[2015-09-04 15:28:56] (ERROR in modTransportProvider::find @ Z:\home\denant.loc\www\core\model\modx\transport\modtransportprovider.class.php : 271) MODX получил пустой ответ от поставщика. Пожалуйста, проверьте URL-адрес поставщика и убедитесь, что поставщик является корректным поставщиком.
+[2015-09-04 15:30:57] (ERROR @ /connectors/index.php) Could not connect to provider at: http://rest.modx.com/extras/
+[2015-09-04 15:30:57] (ERROR in modTransportProvider::find @ Z:\home\denant.loc\www\core\model\modx\transport\modtransportprovider.class.php : 271) MODX получил пустой ответ от поставщика. Пожалуйста, проверьте URL-адрес поставщика и убедитесь, что поставщик является корректным поставщиком.
+[2015-09-04 15:30:57] (ERROR @ /connectors/index.php) Could not connect to provider at: http://rest.modx.com/extras/
+[2015-09-04 15:30:57] (ERROR in modTransportProvider::find @ Z:\home\denant.loc\www\core\model\modx\transport\modtransportprovider.class.php : 271) MODX получил пустой ответ от поставщика. Пожалуйста, проверьте URL-адрес поставщика и убедитесь, что поставщик является корректным поставщиком.
+[2015-09-04 15:37:09] (ERROR @ /connectors/index.php) Could not connect to provider at: http://rest.modx.com/extras/
+[2015-09-04 15:37:09] (ERROR @ /connectors/index.php) Could not connect to provider at: http://rest.modx.com/extras/
+[2015-09-04 15:37:09] (ERROR in modTransportProvider::stats @ Z:\home\denant.loc\www\core\model\modx\transport\modtransportprovider.class.php : 135) MODX получил пустой ответ от поставщика. Пожалуйста, проверьте URL-адрес поставщика и убедитесь, что поставщик является корректным поставщиком.
+[2015-09-04 15:37:15] (ERROR @ /connectors/index.php) Could not connect to provider at: http://rest.modx.com/extras/
+[2015-09-04 15:37:15] (ERROR in modTransportProvider::find @ Z:\home\denant.loc\www\core\model\modx\transport\modtransportprovider.class.php : 271) MODX получил пустой ответ от поставщика. Пожалуйста, проверьте URL-адрес поставщика и убедитесь, что поставщик является корректным поставщиком.
+[2015-09-04 15:37:15] (ERROR @ /connectors/index.php) Could not connect to provider at: http://rest.modx.com/extras/
+[2015-09-04 15:37:15] (ERROR in modTransportProvider::find @ Z:\home\denant.loc\www\core\model\modx\transport\modtransportprovider.class.php : 271) MODX получил пустой ответ от поставщика. Пожалуйста, проверьте URL-адрес поставщика и убедитесь, что поставщик является корректным поставщиком.
+[2015-09-04 15:41:04] (ERROR @ /connectors/index.php) Could not connect to provider at: http://rest.modx.com/extras/
+[2015-09-04 15:41:04] (ERROR in modTransportProvider::find @ Z:\home\denant.loc\www\core\model\modx\transport\modtransportprovider.class.php : 271) MODX получил пустой ответ от поставщика. Пожалуйста, проверьте URL-адрес поставщика и убедитесь, что поставщик является корректным поставщиком.
+[2015-09-04 15:41:04] (ERROR @ /connectors/index.php) Could not connect to provider at: http://rest.modx.com/extras/
+[2015-09-04 15:41:04] (ERROR in modTransportProvider::find @ Z:\home\denant.loc\www\core\model\modx\transport\modtransportprovider.class.php : 271) MODX получил пустой ответ от поставщика. Пожалуйста, проверьте URL-адрес поставщика и убедитесь, что поставщик является корректным поставщиком.
+[2015-09-04 15:43:05] (ERROR @ /connectors/index.php) Could not connect to provider at: http://rest.modx.com/extras/
+[2015-09-04 15:43:05] (ERROR in modTransportProvider::stats @ Z:\home\denant.loc\www\core\model\modx\transport\modtransportprovider.class.php : 135) MODX получил пустой ответ от поставщика. Пожалуйста, проверьте URL-адрес поставщика и убедитесь, что поставщик является корректным поставщиком.
+[2015-09-04 15:43:05] (ERROR @ /connectors/index.php) Could not connect to provider at: http://rest.modx.com/extras/
+[2015-09-04 15:44:07] (ERROR @ /connectors/index.php) Could not connect to provider at: http://rest.modx.com/extras/
+[2015-09-04 15:44:07] (ERROR in modTransportProvider::find @ Z:\home\denant.loc\www\core\model\modx\transport\modtransportprovider.class.php : 271) MODX получил пустой ответ от поставщика. Пожалуйста, проверьте URL-адрес поставщика и убедитесь, что поставщик является корректным поставщиком.
+[2015-09-04 15:44:07] (ERROR @ /connectors/index.php) Could not connect to provider at: http://rest.modx.com/extras/
+[2015-09-04 15:44:07] (ERROR in modTransportProvider::find @ Z:\home\denant.loc\www\core\model\modx\transport\modtransportprovider.class.php : 271) MODX получил пустой ответ от поставщика. Пожалуйста, проверьте URL-адрес поставщика и убедитесь, что поставщик является корректным поставщиком.
+[2015-09-04 17:19:40] (ERROR @ /connectors/index.php) Could not connect to provider at: http://rest.modx.com/extras/
+[2015-09-04 17:19:40] (ERROR @ /connectors/index.php) Could not connect to provider at: http://rest.modx.com/extras/
+[2015-09-04 17:19:40] (ERROR @ /connectors/index.php) Could not connect to provider at: http://rest.modx.com/extras/
+[2015-09-04 17:19:40] (ERROR @ /connectors/index.php) Could not connect to provider at: http://rest.modx.com/extras/
+[2015-09-04 17:19:40] (ERROR @ /connectors/index.php) Could not connect to provider at: http://rest.modx.com/extras/
+[2015-09-04 19:45:46] (ERROR @ Z:\home\denant.loc\www\core\model\modx\xmlrss\rssfetch.class.php : 241) User warning: MagpieRSS: Failed to fetch http://feeds.feedburner.com/modx-announce (HTTP Error: connection failed (1006)
+[2015-09-04 19:45:47] (ERROR @ Z:\home\denant.loc\www\core\model\modx\xmlrss\rssfetch.class.php : 241) User warning: MagpieRSS: Failed to fetch http://forums.modx.com/board.xml?board=294 (HTTP Error: connection failed (1006)
+[2015-09-04 20:07:22] (ERROR @ /connectors/lang.js.php) Error caching lexicon topic lexicon/ru/core/resource
+[2015-09-04 20:17:21] (ERROR @ /manager/index.php) Error caching lexicon topic lexicon/ru/ace/default
+[2015-09-07 13:26:53] (ERROR @ Z:\home\denant.loc\www\core\model\modx\xmlrss\rssfetch.class.php : 241) User warning: MagpieRSS: Failed to fetch http://feeds.feedburner.com/modx-announce (HTTP Error: connection failed (1006)
+[2015-09-07 13:26:54] (ERROR @ Z:\home\denant.loc\www\core\model\modx\xmlrss\rssfetch.class.php : 241) User warning: MagpieRSS: Failed to fetch http://forums.modx.com/board.xml?board=294 (HTTP Error: connection failed (1006)
+[2015-09-07 22:04:40] (ERROR @ Z:\home\denant.loc\www\core\model\modx\xmlrss\rssfetch.class.php : 241) User warning: MagpieRSS: Failed to fetch http://feeds.feedburner.com/modx-announce (HTTP Error: connection failed (1006)
+[2015-09-07 22:04:41] (ERROR @ Z:\home\denant.loc\www\core\model\modx\xmlrss\rssfetch.class.php : 241) User warning: MagpieRSS: Failed to fetch http://forums.modx.com/board.xml?board=294 (HTTP Error: connection failed (1006)
+[2015-09-08 13:26:41] (ERROR @ Z:\home\denant.loc\www\core\model\modx\xmlrss\rssfetch.class.php : 241) User warning: MagpieRSS: Failed to fetch http://feeds.feedburner.com/modx-announce (HTTP Error: connection failed (1006)
+[2015-09-08 13:26:42] (ERROR @ Z:\home\denant.loc\www\core\model\modx\xmlrss\rssfetch.class.php : 241) User warning: MagpieRSS: Failed to fetch http://forums.modx.com/board.xml?board=294 (HTTP Error: connection failed (1006)
+[2015-09-08 13:37:32] (ERROR @ /connectors/index.php) Could not connect to provider at: http://rest.modx.com/extras/
+[2015-09-08 16:43:58] (ERROR @ Z:\home\denant.loc\www\core\model\modx\xmlrss\rssfetch.class.php : 241) User warning: MagpieRSS: Failed to fetch http://feeds.feedburner.com/modx-announce (HTTP Error: connection failed (1006)
+[2015-09-08 16:43:59] (ERROR @ Z:\home\denant.loc\www\core\model\modx\xmlrss\rssfetch.class.php : 241) User warning: MagpieRSS: Failed to fetch http://forums.modx.com/board.xml?board=294 (HTTP Error: connection failed (1006)
+[2015-09-08 17:44:09] (ERROR @ Z:\home\denant.loc\www\core\model\modx\xmlrss\rssfetch.class.php : 241) User warning: MagpieRSS: Failed to fetch http://feeds.feedburner.com/modx-announce (HTTP Error: connection failed (1006)
+[2015-09-08 17:44:10] (ERROR @ Z:\home\denant.loc\www\core\model\modx\xmlrss\rssfetch.class.php : 241) User warning: MagpieRSS: Failed to fetch http://forums.modx.com/board.xml?board=294 (HTTP Error: connection failed (1006)
+[2015-09-08 17:44:24] (ERROR @ Z:\home\denant.loc\www\core\model\modx\xmlrss\rssfetch.class.php : 241) User warning: MagpieRSS: Failed to fetch http://feeds.feedburner.com/modx-announce (HTTP Error: connection failed (1006)
+[2015-09-08 17:44:25] (ERROR @ Z:\home\denant.loc\www\core\model\modx\xmlrss\rssfetch.class.php : 241) User warning: MagpieRSS: Failed to fetch http://forums.modx.com/board.xml?board=294 (HTTP Error: connection failed (1006)
+[2015-09-08 20:44:30] (ERROR @ Z:\home\denant.loc\www\core\model\modx\xmlrss\rssfetch.class.php : 241) User warning: MagpieRSS: Failed to fetch http://feeds.feedburner.com/modx-announce (HTTP Error: connection failed (1006)
+[2015-09-08 20:44:31] (ERROR @ Z:\home\denant.loc\www\core\model\modx\xmlrss\rssfetch.class.php : 241) User warning: MagpieRSS: Failed to fetch http://forums.modx.com/board.xml?board=294 (HTTP Error: connection failed (1006)
+[2015-09-08 21:35:11] (ERROR @ /connectors/index.php) Could not connect to provider at: http://rest.modx.com/extras/
+[2015-09-08 21:36:52] (ERROR @ /connectors/index.php) Could not connect to provider at: http://rest.modx.com/extras/
+[2015-09-08 21:36:52] (ERROR in modTransportProvider::find @ Z:\home\denant.loc\www\core\model\modx\transport\modtransportprovider.class.php : 271) MODX получил пустой ответ от поставщика. Пожалуйста, проверьте URL-адрес поставщика и убедитесь, что поставщик является корректным поставщиком.
+[2015-09-08 21:36:52] (ERROR @ /connectors/index.php) Could not connect to provider at: http://rest.modx.com/extras/
+[2015-09-08 21:36:52] (ERROR in modTransportProvider::find @ Z:\home\denant.loc\www\core\model\modx\transport\modtransportprovider.class.php : 271) MODX получил пустой ответ от поставщика. Пожалуйста, проверьте URL-адрес поставщика и убедитесь, что поставщик является корректным поставщиком.
+[2015-09-08 21:37:26] (ERROR @ Z:\home\denant.loc\www\core\model\modx\xmlrss\rssfetch.class.php : 241) User warning: MagpieRSS: Failed to fetch http://feeds.feedburner.com/modx-announce (HTTP Error: connection failed (1006)
+[2015-09-08 21:37:27] (ERROR @ Z:\home\denant.loc\www\core\model\modx\xmlrss\rssfetch.class.php : 241) User warning: MagpieRSS: Failed to fetch http://forums.modx.com/board.xml?board=294 (HTTP Error: connection failed (1006)
+[2015-09-08 21:38:20] (ERROR @ /connectors/index.php) Could not connect to provider at: http://rest.modx.com/extras/
+[2015-09-08 21:38:27] (ERROR @ /connectors/index.php) Could not connect to provider at: http://rest.modx.com/extras/
+[2015-09-08 21:48:18] (ERROR @ /index.php) Could not prepare context: English
+[2015-09-08 21:48:29] (ERROR @ /index.php) Could not prepare context: English
+[2015-09-09 13:30:32] (ERROR @ Z:\home\denant.loc\www\core\model\modx\xmlrss\rssfetch.class.php : 241) User warning: MagpieRSS: Failed to fetch http://feeds.feedburner.com/modx-announce (HTTP Error: connection failed (1006)
+[2015-09-09 13:30:33] (ERROR @ Z:\home\denant.loc\www\core\model\modx\xmlrss\rssfetch.class.php : 241) User warning: MagpieRSS: Failed to fetch http://forums.modx.com/board.xml?board=294 (HTTP Error: connection failed (1006)
+[2015-09-09 16:11:24] (ERROR @ /index.php) Could not load context: en
+[2015-09-09 16:12:28] (ERROR @ /index.php) Could not load context: en
+[2015-09-09 16:13:06] (ERROR @ /index.php) Could not load context: en
+[2015-09-09 16:13:18] (ERROR @ /index.php) Could not load context: en
+[2015-09-09 16:59:56] (ERROR @ /index.php) Could not load context: en
+[2015-09-09 17:00:03] (ERROR @ /connectors/modx.config.js.php) Error caching lexicon topic lexicon/ru/core/resource
+[2015-09-09 20:52:53] (ERROR @ Z:\home\denant.loc\www\core\model\modx\xmlrss\rssfetch.class.php : 241) User warning: MagpieRSS: Failed to fetch http://feeds.feedburner.com/modx-announce (HTTP Error: connection failed (1006)
+[2015-09-09 20:52:54] (ERROR @ Z:\home\denant.loc\www\core\model\modx\xmlrss\rssfetch.class.php : 241) User warning: MagpieRSS: Failed to fetch http://forums.modx.com/board.xml?board=294 (HTTP Error: connection failed (1006)
+[2015-09-10 13:20:25] (ERROR @ Z:\home\denant.loc\www\core\model\modx\xmlrss\rssfetch.class.php : 241) User warning: MagpieRSS: Failed to fetch http://feeds.feedburner.com/modx-announce (HTTP Error: connection failed (1006)
+[2015-09-10 13:20:26] (ERROR @ Z:\home\denant.loc\www\core\model\modx\xmlrss\rssfetch.class.php : 241) User warning: MagpieRSS: Failed to fetch http://forums.modx.com/board.xml?board=294 (HTTP Error: connection failed (1006)
+[2015-09-10 16:45:51] (ERROR @ /index.php) `[[+url1]]` is not a valid integer and may not be passed to makeUrl()
+[2015-09-10 16:47:30] (ERROR @ /index.php) `[[+url1]]` is not a valid integer and may not be passed to makeUrl()
+[2015-09-11 13:28:13] (ERROR @ Z:\home\denant.loc\www\core\model\modx\xmlrss\rssfetch.class.php : 241) User warning: MagpieRSS: Failed to fetch http://feeds.feedburner.com/modx-announce (HTTP Error: connection failed (1006)
+[2015-09-11 13:28:14] (ERROR @ Z:\home\denant.loc\www\core\model\modx\xmlrss\rssfetch.class.php : 241) User warning: MagpieRSS: Failed to fetch http://forums.modx.com/board.xml?board=294 (HTTP Error: connection failed (1006)
+[2015-09-11 20:17:39] (ERROR @ Z:\home\denant.loc\www\core\model\modx\xmlrss\rssfetch.class.php : 241) User warning: MagpieRSS: Failed to fetch http://feeds.feedburner.com/modx-announce (HTTP Error: connection failed (1006)
+[2015-09-11 20:17:40] (ERROR @ Z:\home\denant.loc\www\core\model\modx\xmlrss\rssfetch.class.php : 241) User warning: MagpieRSS: Failed to fetch http://forums.modx.com/board.xml?board=294 (HTTP Error: connection failed (1006)
+[2015-09-11 20:17:46] (ERROR @ Z:\home\denant.loc\www\core\model\modx\xmlrss\rssfetch.class.php : 241) User warning: MagpieRSS: Failed to fetch http://feeds.feedburner.com/modx-announce (HTTP Error: connection failed (1006)
+[2015-09-11 20:17:47] (ERROR @ Z:\home\denant.loc\www\core\model\modx\xmlrss\rssfetch.class.php : 241) User warning: MagpieRSS: Failed to fetch http://forums.modx.com/board.xml?board=294 (HTTP Error: connection failed (1006)
+[2015-09-11 20:35:31] (ERROR @ /connectors/index.php) Could not connect to provider at: http://rest.modx.com/extras/
+[2015-09-11 20:35:31] (ERROR in modTransportProvider::stats @ Z:\home\denant.loc\www\core\model\modx\transport\modtransportprovider.class.php : 135) MODX получил пустой ответ от поставщика. Пожалуйста, проверьте URL-адрес поставщика и убедитесь, что поставщик является корректным поставщиком.
+[2015-09-11 20:39:58] (ERROR @ /connectors/index.php) Could not connect to provider at: http://rest.modx.com/extras/
+[2015-09-11 20:39:58] (ERROR in modTransportProvider::find @ Z:\home\denant.loc\www\core\model\modx\transport\modtransportprovider.class.php : 271) MODX получил пустой ответ от поставщика. Пожалуйста, проверьте URL-адрес поставщика и убедитесь, что поставщик является корректным поставщиком.
+[2015-09-11 20:39:58] (ERROR @ /connectors/index.php) Could not connect to provider at: http://rest.modx.com/extras/
+[2015-09-11 20:39:58] (ERROR in modTransportProvider::find @ Z:\home\denant.loc\www\core\model\modx\transport\modtransportprovider.class.php : 271) MODX получил пустой ответ от поставщика. Пожалуйста, проверьте URL-адрес поставщика и убедитесь, что поставщик является корректным поставщиком.
+[2015-09-14 14:00:34] (ERROR @ Z:\home\denant.loc\www\core\model\modx\xmlrss\rssfetch.class.php : 241) User warning: MagpieRSS: Failed to fetch http://feeds.feedburner.com/modx-announce (HTTP Error: connection failed (1006)
+[2015-09-14 14:00:35] (ERROR @ Z:\home\denant.loc\www\core\model\modx\xmlrss\rssfetch.class.php : 241) User warning: MagpieRSS: Failed to fetch http://forums.modx.com/board.xml?board=294 (HTTP Error: connection failed (1006)
+[2015-09-14 14:39:20] (ERROR @ /index.php) `lang` is not a valid integer and may not be passed to makeUrl()
+[2015-09-14 14:39:23] (ERROR @ /index.php) `lang` is not a valid integer and may not be passed to makeUrl()
+[2015-09-14 14:39:30] (ERROR @ /index.php) `lang` is not a valid integer and may not be passed to makeUrl()
+[2015-09-14 14:39:45] (ERROR @ /index.php) `lang` is not a valid integer and may not be passed to makeUrl()
+[2015-09-14 14:39:52] (ERROR @ /index.php) `lang` is not a valid integer and may not be passed to makeUrl()
+[2015-09-14 14:39:55] (ERROR @ /index.php) `lang` is not a valid integer and may not be passed to makeUrl()
+[2015-09-14 14:39:57] (ERROR @ /index.php) `lang` is not a valid integer and may not be passed to makeUrl()

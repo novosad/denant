@@ -1,0 +1,13 @@
+[2015-09-03 21:51:19] (ERROR @ /setup/index.php) Could not copy Z:/home/denant.loc/www/core/packages/core/modContext/daaf224e93519d2a7ab7eb7044c24520/0/ to Z:/home/denant.loc/www/index.php
+[2015-09-03 21:51:19] (ERROR @ /setup/index.php) Could not copy Z:/home/denant.loc/www/core/packages/core/modContext/daaf224e93519d2a7ab7eb7044c24520/1/ to Z:/home/denant.loc/www/ht.access
+[2015-09-03 21:51:19] (ERROR @ /setup/index.php) Could not copy Z:/home/denant.loc/www/core/packages/core/modContext/7a6d878454764053a08ae73e7899fd47/0/ to Z:/home/denant.loc/www/manager/assets
+[2015-09-03 21:51:19] (ERROR @ /setup/index.php) Could not copy Z:/home/denant.loc/www/core/packages/core/modContext/7a6d878454764053a08ae73e7899fd47/1/ to Z:/home/denant.loc/www/manager/controllers
+[2015-09-03 21:51:19] (ERROR @ /setup/index.php) Could not copy Z:/home/denant.loc/www/core/packages/core/modContext/7a6d878454764053a08ae73e7899fd47/2/ to Z:/home/denant.loc/www/manager/templates
+[2015-09-03 21:51:19] (ERROR @ /setup/index.php) Could not copy Z:/home/denant.loc/www/core/packages/core/modContext/7a6d878454764053a08ae73e7899fd47/3/ to Z:/home/denant.loc/www/manager/min
+[2015-09-03 21:51:19] (ERROR @ /setup/index.php) Could not copy Z:/home/denant.loc/www/core/packages/core/modContext/7a6d878454764053a08ae73e7899fd47/4/ to Z:/home/denant.loc/www/manager/ht.access
+[2015-09-03 21:51:19] (ERROR @ /setup/index.php) Could not copy Z:/home/denant.loc/www/core/packages/core/modContext/7a6d878454764053a08ae73e7899fd47/5/ to Z:/home/denant.loc/www/manager/cache.manifest.php
+[2015-09-03 21:51:19] (ERROR @ /setup/index.php) Could not copy Z:/home/denant.loc/www/core/packages/core/modContext/7a6d878454764053a08ae73e7899fd47/6/ to Z:/home/denant.loc/www/manager/index.php
+[2015-09-03 21:51:19] (ERROR @ /setup/index.php) Could not install files from Z:/home/denant.loc/www/core/packages/core/xPDOFileVehicle/43658885512c425e7a878ce0fbeda2ba/ to Z:/home/denant.loc/www/connectors/
+[2015-09-03 21:51:19] (ERROR @ /setup/index.php) Could not install files from Z:/home/denant.loc/www/core/packages/core/xPDOFileVehicle/c86940a213053dc941cd7508ad1372df/ to Z:/home/denant.loc/www/connectors/
+[2015-09-03 21:51:19] (ERROR @ /setup/index.php) Could not install files from Z:/home/denant.loc/www/core/packages/core/xPDOFileVehicle/1c0f6d39c62bfbd91919e20d8eb5366e/ to Z:/home/denant.loc/www/connectors/
+[2015-09-03 21:51:19] (ERROR @ /setup/index.php) Could not install files from Z:/home/denant.loc/www/core/packages/core/xPDOFileVehicle/6f7e4f39b9b276f7be62dc56b3fb5192/ to Z:/home/denant.loc/www/connectors/

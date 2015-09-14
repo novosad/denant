@@ -1,0 +1,12 @@
+<?php return array (
+  'preserve_keys' => true,
+  'update_object' => false,
+  'vehicle_package' => 'transport',
+  'vehicle_class' => 'xPDOObjectVehicle',
+  'guid' => 'e2b6bebd0ad06d982e101486c8087c46',
+  'package' => 'modx',
+  'class' => 'modSystemSetting',
+  'signature' => '49ba387dcac2613e03bfc94ac83bf919',
+  'native_key' => 'friendly_urls',
+  'object' => '{"key":"friendly_urls","value":"0","xtype":"combo-boolean","namespace":"core","area":"furls","editedon":null}',
+);
