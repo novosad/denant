@@ -53,13 +53,13 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; UTF-8" />
-<base href="http://denant.loc/" />
+<base href="http://denant.web/" />
 <title>О компании | Denant</title>
 <link href="/assets/templates/isdox/css/style.css" rel="stylesheet" type="text/css" />
 <link rel="stylesheet" type="text/css" href="/assets/templates/isdox/css/coin-slider.css" />
 <!-- <script type="text/javascript" src="assets/templates/isdox/js/cufon-yui.js"></script> 
 <script type="text/javascript" src="assets/templates/isdox/js/droid_sans_400-droid_sans_700.font.js"></script> -->
-<script type="text/javascript" src="/assets/templates/isdox/js/jquery-1.4.2.min.js"></script>
+<script type="text/javascript" src="/assets/templates/isdox/js/jquery-1.11.3.js"></script>
 <script type="text/javascript" src="/assets/templates/isdox/js/selLang.js"></script>
 <script type="text/javascript" src="/assets/templates/isdox/js/script.js"></script>
 <script type="text/javascript" src="/assets/templates/isdox/js/coin-slider.min.js"></script>
@@ -79,10 +79,11 @@
       <div class="clr"></div>
       <div class="logo">
     <div class="lang">
-    <a href="http://denant.loc/" class="ru">ru</a>
-<a href="http://denant.loc/en/en-index.html" class="en">en</a>
+    <a href="http://denant.web/" class="ru">ru</a>
+<a href="http://denant.web/en/" class="en">en</a>
+<a href="http://denant.web/fr/fr-index.html" class="fr">fr</a>
 </div>
-   <h1 class="mark"> <a href="http://denant.loc/">ДенАнтТранс<small>Работать нужно так, чтобы последующие клиенты были друзьями предыдущих</small> </h1>
+   <h1 class="mark"> <a href="http://denant.web/">ДенАнтТранс<small>Работать нужно так, чтобы последующие клиенты были друзьями предыдущих</small> </h1>
 </div>
       <div class="clr"></div>
       [[!getSlider? &tpl=`view_slider`]]
@@ -105,15 +106,7 @@
         [[!getSearch? &tpl=`view_search`]]
         <div class="clr"></div>
         <div class="gadget">
-    <h2>Мы на lardi-trans.com</h2>
-    <a target="_blank" href="http://lardi-trans.com/user/16937948586"> 
-        <img src="../assets/templates/isdox/images/lardi.jpg" weight="250" height="40" alt="" />
-    </a>
-    <div class="clr"></div>
-    <h2>Мы на Transinfo</h2>
-    <a target="_blank" href="http://www.transinfo.by/proofzone/firm35986.html">
-        <img src="../assets/templates/isdox/images/transinfo.jpg" weight="250" height="40" alt="" />
-    </a>
+    [[!getLeave? &tpl=`view_leave`]]
     <h2>Группа в контакте</h2>
     <div class=vk>
         <div class="vkl">
@@ -127,12 +120,25 @@
             </a>
         </div>
     </div>
+    <h2> Погода </h2>
+    <div>
+        <a href="https://clck.yandex.ru/redir/dtype=stred/pid=7/cid=1228/*https://pogoda.yandex.ru/grodno" target="_blank">
+            <img src="//info.weather.yandex.net/grodno/1_white.ru.png?domain=ru" border="0" alt="Яндекс.Погода"/>
+            <img width="1" height="1" src="https://clck.yandex.ru/click/dtype=stred/pid=7/cid=1227/*https://img.yandex.ru/i/pix.gif" alt="" border="0"/>
+</a>
+    </div>
 </div>
         <div class="gadget">
     <iframe src="http://www.nbrb.by/publications/wmastersd.asp?lnkcolor=Maroon&bgcolor=F5F5DC&brdcolor=dcdccd"
         width=237 height=86 frameborder=0 scrolling=no>
     </iframe>
 </div>
+        <h2> Последние отзывы </h2>
+[[!getComments?
+&limit=`5` 
+&tpl=`tpl.Tickets.comment.latest` 
+&action=`comments` 
+&includeContent=`1`]]
       </div>
       <div class="clr"></div>
     </div>
@@ -159,12 +165,11 @@
   ),
   'elementCache' => 
   array (
-    '[[*pagetitle]]' => 'О компании',
     '[[$files]]' => '<link href="/assets/templates/isdox/css/style.css" rel="stylesheet" type="text/css" />
 <link rel="stylesheet" type="text/css" href="/assets/templates/isdox/css/coin-slider.css" />
 <!-- <script type="text/javascript" src="assets/templates/isdox/js/cufon-yui.js"></script> 
 <script type="text/javascript" src="assets/templates/isdox/js/droid_sans_400-droid_sans_700.font.js"></script> -->
-<script type="text/javascript" src="/assets/templates/isdox/js/jquery-1.4.2.min.js"></script>
+<script type="text/javascript" src="/assets/templates/isdox/js/jquery-1.11.3.js"></script>
 <script type="text/javascript" src="/assets/templates/isdox/js/selLang.js"></script>
 <script type="text/javascript" src="/assets/templates/isdox/js/script.js"></script>
 <script type="text/javascript" src="/assets/templates/isdox/js/coin-slider.min.js"></script>
@@ -176,37 +181,30 @@
     '[[$menu]]' => '<div class="menu_nav">
     [[!Wayfinder? &startId=`0`]]
 </div>',
-    '[[BabelLinks? &tpl=`language` &showCurrent=`1` &ignoreSiteStatus=`1`]]' => '<a href="http://denant.loc/" class="ru">ru</a>
-<a href="http://denant.loc/en/en-index.html" class="en">en</a>',
+    '[[BabelLinks? &tpl=`language` &showCurrent=`1` &ignoreSiteStatus=`1`]]' => '<a href="http://denant.web/" class="ru">ru</a>
+<a href="http://denant.web/en/" class="en">en</a>
+<a href="http://denant.web/fr/fr-index.html" class="fr">fr</a>',
     '[[$lang]]' => '<div class="lang">
-    <a href="http://denant.loc/" class="ru">ru</a>
-<a href="http://denant.loc/en/en-index.html" class="en">en</a>
+    <a href="http://denant.web/" class="ru">ru</a>
+<a href="http://denant.web/en/" class="en">en</a>
+<a href="http://denant.web/fr/fr-index.html" class="fr">fr</a>
 </div>',
-    '[[~1]]' => 'http://denant.loc/',
-    '[[%mark]]' => 'ДенАнтТранс',
-    '[[%slogan]]' => 'Работать нужно так, чтобы последующие клиенты были друзьями предыдущих',
     '[[$logo]]' => '<div class="logo">
     <div class="lang">
-    <a href="http://denant.loc/" class="ru">ru</a>
-<a href="http://denant.loc/en/en-index.html" class="en">en</a>
+    <a href="http://denant.web/" class="ru">ru</a>
+<a href="http://denant.web/en/" class="en">en</a>
+<a href="http://denant.web/fr/fr-index.html" class="fr">fr</a>
 </div>
-   <h1 class="mark"> <a href="http://denant.loc/">ДенАнтТранс<small>Работать нужно так, чтобы последующие клиенты были друзьями предыдущих</small> </h1>
+   <h1 class="mark"> <a href="http://denant.web/">ДенАнтТранс<small>Работать нужно так, чтобы последующие клиенты были друзьями предыдущих</small> </h1>
 </div>',
     '[[$slider]]' => '[[!getSlider? &tpl=`view_slider`]]',
     '[[$search]]' => '[[!getSearch? &tpl=`view_search`]]',
-    '[[%lardi]]' => 'Мы на lardi-trans.com',
-    '[[%trans]]' => 'Мы на Transinfo',
-    '[[%vk]]' => 'Группа в контакте',
+    '[[$weather]]' => '<a href="https://clck.yandex.ru/redir/dtype=stred/pid=7/cid=1228/*https://pogoda.yandex.ru/grodno" target="_blank">
+            <img src="//info.weather.yandex.net/grodno/1_white.ru.png?domain=ru" border="0" alt="Яндекс.Погода"/>
+            <img width="1" height="1" src="https://clck.yandex.ru/click/dtype=stred/pid=7/cid=1227/*https://img.yandex.ru/i/pix.gif" alt="" border="0"/>
+</a>',
     '[[$trans]]' => '<div class="gadget">
-    <h2>Мы на lardi-trans.com</h2>
-    <a target="_blank" href="http://lardi-trans.com/user/16937948586"> 
-        <img src="../assets/templates/isdox/images/lardi.jpg" weight="250" height="40" alt="" />
-    </a>
-    <div class="clr"></div>
-    <h2>Мы на Transinfo</h2>
-    <a target="_blank" href="http://www.transinfo.by/proofzone/firm35986.html">
-        <img src="../assets/templates/isdox/images/transinfo.jpg" weight="250" height="40" alt="" />
-    </a>
+    [[!getLeave? &tpl=`view_leave`]]
     <h2>Группа в контакте</h2>
     <div class=vk>
         <div class="vkl">
@@ -220,32 +218,26 @@
             </a>
         </div>
     </div>
+    <h2> Погода </h2>
+    <div>
+        <a href="https://clck.yandex.ru/redir/dtype=stred/pid=7/cid=1228/*https://pogoda.yandex.ru/grodno" target="_blank">
+            <img src="//info.weather.yandex.net/grodno/1_white.ru.png?domain=ru" border="0" alt="Яндекс.Погода"/>
+            <img width="1" height="1" src="https://clck.yandex.ru/click/dtype=stred/pid=7/cid=1227/*https://img.yandex.ru/i/pix.gif" alt="" border="0"/>
+</a>
+    </div>
 </div>',
     '[[$currency]]' => '<div class="gadget">
     <iframe src="http://www.nbrb.by/publications/wmastersd.asp?lnkcolor=Maroon&bgcolor=F5F5DC&brdcolor=dcdccd"
         width=237 height=86 frameborder=0 scrolling=no>
     </iframe>
 </div>',
+    '[[$lastReview]]' => '<h2> Последние отзывы </h2>
+[[!getComments?
+&limit=`5` 
+&tpl=`tpl.Tickets.comment.latest` 
+&action=`comments` 
+&includeContent=`1`]]',
     '[[$footer]]' => '[[!getFooter? &tpl=`view_footer`]]',
-    '[[%slider1]]' => 'Мы - транспортно-экспедиционная компания. Направления нашей постоянной работы — транспортировка и экспедирования грузов из Беларуси в Россию, Казахстан, Украину, Венгрию, Сербию, Польшу, Чехию, Словакию, Хорватию, Германию, Голландию, Италию, Литву, Латвию, Эстонию и в обратном направлении.',
-    '[[~2]]' => 'documents.html',
-    '[[%slider2]]' => 'Наша компания предоставляет услуги по доставке сборных грузов от 100 кг и более, грузов АДР класса, негабаритных грузов по вышеуказанным направлениям.',
-    '[[~4]]' => 'contact.html',
-    '[[%slider3]]' => 'Штат квалифицированных специалистов предлагает вам свои услуги в организации международных перевозок грузов любой сложности собственным и привлеченным автомобильным транспортом.',
-    '[[~11]]' => 'search-results.html',
-    '[[%address]]' => 'Наш адрес',
-    '[[%street]]' => 'РБ г.Гродно, ул. Ожешко 25',
-    '[[%room]]' => 'корпус 3, каб. 212',
-    '[[%more]]' => 'Подробней...',
-    '[[%contact]]' => 'Наши контакты',
-    '[[%phone]]' => 'Телефон:',
-    '[[%services]]' => 'Наши услуги',
-    '[[%trucking1]]' => 'Грузоперевозки',
-    '[[%trucking2]]' => 'Перевозка опасных грузов',
-    '[[%trucking3]]' => 'Перевозка сборных пунктов',
-    '[[%trucking4]]' => 'Международные перевозки',
-    '[[~5]]' => 'services.html',
-    '[[%develop]]' => 'Разработка сайта',
   ),
   'sourceCache' => 
   array (
@@ -267,7 +259,7 @@
 <link rel="stylesheet" type="text/css" href="/assets/templates/isdox/css/coin-slider.css" />
 <!-- <script type="text/javascript" src="assets/templates/isdox/js/cufon-yui.js"></script> 
 <script type="text/javascript" src="assets/templates/isdox/js/droid_sans_400-droid_sans_700.font.js"></script> -->
-<script type="text/javascript" src="/assets/templates/isdox/js/jquery-1.4.2.min.js"></script>
+<script type="text/javascript" src="/assets/templates/isdox/js/jquery-1.11.3.js"></script>
 <script type="text/javascript" src="/assets/templates/isdox/js/selLang.js"></script>
 <script type="text/javascript" src="/assets/templates/isdox/js/script.js"></script>
 <script type="text/javascript" src="/assets/templates/isdox/js/coin-slider.min.js"></script>
@@ -286,7 +278,7 @@
 <link rel="stylesheet" type="text/css" href="/assets/templates/isdox/css/coin-slider.css" />
 <!-- <script type="text/javascript" src="assets/templates/isdox/js/cufon-yui.js"></script> 
 <script type="text/javascript" src="assets/templates/isdox/js/droid_sans_400-droid_sans_700.font.js"></script> -->
-<script type="text/javascript" src="/assets/templates/isdox/js/jquery-1.4.2.min.js"></script>
+<script type="text/javascript" src="/assets/templates/isdox/js/jquery-1.11.3.js"></script>
 <script type="text/javascript" src="/assets/templates/isdox/js/selLang.js"></script>
 <script type="text/javascript" src="/assets/templates/isdox/js/script.js"></script>
 <script type="text/javascript" src="/assets/templates/isdox/js/coin-slider.min.js"></script>
@@ -518,15 +510,7 @@
           'category' => 0,
           'cache_type' => 0,
           'snippet' => '<div class="gadget">
-    <h2>[[%lardi]]</h2>
-    <a target="_blank" href="http://lardi-trans.com/user/16937948586"> 
-        <img src="../assets/templates/isdox/images/lardi.jpg" weight="250" height="40" alt="" />
-    </a>
-    <div class="clr"></div>
-    <h2>[[%trans]]</h2>
-    <a target="_blank" href="http://www.transinfo.by/proofzone/firm35986.html">
-        <img src="../assets/templates/isdox/images/transinfo.jpg" weight="250" height="40" alt="" />
-    </a>
+    [[!getLeave? &tpl=`view_leave`]]
     <h2>[[%vk]]</h2>
     <div class=vk>
         <div class="vkl">
@@ -539,6 +523,10 @@
                 vk.com/denanttrans
             </a>
         </div>
+    </div>
+    <h2> [[%weather]] </h2>
+    <div>
+        [[$weather]]
     </div>
 </div>',
           'locked' => false,
@@ -548,15 +536,7 @@
           'static' => false,
           'static_file' => '',
           'content' => '<div class="gadget">
-    <h2>[[%lardi]]</h2>
-    <a target="_blank" href="http://lardi-trans.com/user/16937948586"> 
-        <img src="../assets/templates/isdox/images/lardi.jpg" weight="250" height="40" alt="" />
-    </a>
-    <div class="clr"></div>
-    <h2>[[%trans]]</h2>
-    <a target="_blank" href="http://www.transinfo.by/proofzone/firm35986.html">
-        <img src="../assets/templates/isdox/images/transinfo.jpg" weight="250" height="40" alt="" />
-    </a>
+    [[!getLeave? &tpl=`view_leave`]]
     <h2>[[%vk]]</h2>
     <div class=vk>
         <div class="vkl">
@@ -570,7 +550,53 @@
             </a>
         </div>
     </div>
+    <h2> [[%weather]] </h2>
+    <div>
+        [[$weather]]
+    </div>
 </div>',
+        ),
+        'policies' => 
+        array (
+        ),
+        'source' => 
+        array (
+          'id' => 1,
+          'name' => 'Filesystem',
+          'description' => '',
+          'class_key' => 'sources.modFileMediaSource',
+          'properties' => 
+          array (
+          ),
+          'is_stream' => true,
+        ),
+      ),
+      'weather' => 
+      array (
+        'fields' => 
+        array (
+          'id' => 36,
+          'source' => 1,
+          'property_preprocess' => false,
+          'name' => 'weather',
+          'description' => 'weather site',
+          'editor_type' => 0,
+          'category' => 0,
+          'cache_type' => 0,
+          'snippet' => '<a href="https://clck.yandex.ru/redir/dtype=stred/pid=7/cid=1228/*https://pogoda.yandex.ru/grodno" target="_blank">
+            <img src="//info.weather.yandex.net/grodno/1_white.ru.png?domain=ru" border="0" alt="Яндекс.Погода"/>
+            <img width="1" height="1" src="https://clck.yandex.ru/click/dtype=stred/pid=7/cid=1227/*https://img.yandex.ru/i/pix.gif" alt="" border="0"/>
+</a>',
+          'locked' => false,
+          'properties' => 
+          array (
+          ),
+          'static' => false,
+          'static_file' => '',
+          'content' => '<a href="https://clck.yandex.ru/redir/dtype=stred/pid=7/cid=1228/*https://pogoda.yandex.ru/grodno" target="_blank">
+            <img src="//info.weather.yandex.net/grodno/1_white.ru.png?domain=ru" border="0" alt="Яндекс.Погода"/>
+            <img width="1" height="1" src="https://clck.yandex.ru/click/dtype=stred/pid=7/cid=1227/*https://img.yandex.ru/i/pix.gif" alt="" border="0"/>
+</a>',
         ),
         'policies' => 
         array (
@@ -615,6 +641,52 @@
         width=237 height=86 frameborder=0 scrolling=no>
     </iframe>
 </div>',
+        ),
+        'policies' => 
+        array (
+        ),
+        'source' => 
+        array (
+          'id' => 1,
+          'name' => 'Filesystem',
+          'description' => '',
+          'class_key' => 'sources.modFileMediaSource',
+          'properties' => 
+          array (
+          ),
+          'is_stream' => true,
+        ),
+      ),
+      'lastReview' => 
+      array (
+        'fields' => 
+        array (
+          'id' => 94,
+          'source' => 1,
+          'property_preprocess' => false,
+          'name' => 'lastReview',
+          'description' => 'View last review',
+          'editor_type' => 0,
+          'category' => 0,
+          'cache_type' => 0,
+          'snippet' => '<h2> [[%lastReview]] </h2>
+[[!getComments?
+&limit=`5` 
+&tpl=`tpl.Tickets.comment.latest` 
+&action=`comments` 
+&includeContent=`1`]]',
+          'locked' => false,
+          'properties' => 
+          array (
+          ),
+          'static' => false,
+          'static_file' => '',
+          'content' => '<h2> [[%lastReview]] </h2>
+[[!getComments?
+&limit=`5` 
+&tpl=`tpl.Tickets.comment.latest` 
+&action=`comments` 
+&includeContent=`1`]]',
         ),
         'policies' => 
         array (
@@ -765,6 +837,46 @@
           'is_stream' => true,
         ),
       ),
+      'view_leave' => 
+      array (
+        'fields' => 
+        array (
+          'id' => 37,
+          'source' => 1,
+          'property_preprocess' => false,
+          'name' => 'view_leave',
+          'description' => '',
+          'editor_type' => 0,
+          'category' => 0,
+          'cache_type' => 0,
+          'snippet' => '<h2> <a href="[[~[[+url1]]]]"> [[%request]] </a> </h2>
+<div class="clr"></div>
+<h2> <a href="[[~[[+url2]]]]"> [[%review]] </a> </h2>',
+          'locked' => false,
+          'properties' => 
+          array (
+          ),
+          'static' => false,
+          'static_file' => '',
+          'content' => '<h2> <a href="[[~[[+url1]]]]"> [[%request]] </a> </h2>
+<div class="clr"></div>
+<h2> <a href="[[~[[+url2]]]]"> [[%review]] </a> </h2>',
+        ),
+        'policies' => 
+        array (
+        ),
+        'source' => 
+        array (
+          'id' => 1,
+          'name' => 'Filesystem',
+          'description' => '',
+          'class_key' => 'sources.modFileMediaSource',
+          'properties' => 
+          array (
+          ),
+          'is_stream' => true,
+        ),
+      ),
       'view_footer' => 
       array (
         'fields' => 
@@ -786,7 +898,7 @@
             [[%street]] <br/>
             [[%room]]
             </p>
-            <a href="[[~[[+url1]]]]">[[%more]]</a>
+            <a href="[[+urlTravel]]">[[%more]]</a>
         </div>
         <div class="col c2">
             <h3>[[%contact]]</h3>
@@ -795,7 +907,7 @@
                 <span>E-mail:</span> <a href="mailto:olga.verobey@mail.ru">olga.verobey@mail.ru</a> <br/>
                 <span>Skype:</span> <a href="skype:antonkakirilka"> antonkakirilka </a> <br />
                 <span>ICQ:</span> 648175073 <br />
-                <a href="[[~[[+url1]]]]">[[%more]]</a>
+                <a href="[[+url1]]">[[%more]]</a>
             </p>
         </div>
         <div class="col c3">
@@ -835,7 +947,7 @@
             [[%street]] <br/>
             [[%room]]
             </p>
-            <a href="[[~[[+url1]]]]">[[%more]]</a>
+            <a href="[[+urlTravel]]">[[%more]]</a>
         </div>
         <div class="col c2">
             <h3>[[%contact]]</h3>
@@ -844,7 +956,7 @@
                 <span>E-mail:</span> <a href="mailto:olga.verobey@mail.ru">olga.verobey@mail.ru</a> <br/>
                 <span>Skype:</span> <a href="skype:antonkakirilka"> antonkakirilka </a> <br />
                 <span>ICQ:</span> 648175073 <br />
-                <a href="[[~[[+url1]]]]">[[%more]]</a>
+                <a href="[[+url1]]">[[%more]]</a>
             </p>
         </div>
         <div class="col c3">
@@ -2159,6 +2271,14 @@ if ($wf->_config[\'ph\']) {
                 \'url3\' => \'10\'
             );
             break;
+        case \'fr\':
+            /* switch the context */
+            $placeholders = array(
+                \'url1\' => \'18\',
+                \'url2\' => \'20\' ,
+                \'url3\' => \'22\'
+            );
+            break;    
         default:
             /* Set the default context here */
             $placeholders = array(
@@ -2189,6 +2309,14 @@ if ($wf->_config[\'ph\']) {
                 \'url3\' => \'10\'
             );
             break;
+        case \'fr\':
+            /* switch the context */
+            $placeholders = array(
+                \'url1\' => \'18\',
+                \'url2\' => \'20\' ,
+                \'url3\' => \'22\'
+            );
+            break;    
         default:
             /* Set the default context here */
             $placeholders = array(
@@ -2238,6 +2366,12 @@ if ($wf->_config[\'ph\']) {
                 \'lang\' => \'12\'
             );
             break;
+        case \'fr\':
+            /* switch the context */
+            $placeholders = array(
+                \'lang\' => \'23\'
+            );
+            break;    
         default:
             /* Set the default context here */
             $placeholders = array(
@@ -2264,6 +2398,12 @@ if ($wf->_config[\'ph\']) {
                 \'lang\' => \'12\'
             );
             break;
+        case \'fr\':
+            /* switch the context */
+            $placeholders = array(
+                \'lang\' => \'23\'
+            );
+            break;    
         default:
             /* Set the default context here */
             $placeholders = array(
@@ -2515,6 +2655,835 @@ return $search->output($output,$scriptProperties[\'toPlaceholder\']);',
         array (
         ),
       ),
+      'getLeave' => 
+      array (
+        'fields' => 
+        array (
+          'id' => 21,
+          'source' => 1,
+          'property_preprocess' => false,
+          'name' => 'getLeave',
+          'description' => 'To leave the block in the sidebar',
+          'editor_type' => 0,
+          'category' => 0,
+          'cache_type' => 0,
+          'snippet' => 'if($modx->context->get(\'key\') != "mgr"){
+    $tpl = isset( $tpl ) ? $tpl : \'tpl_res\'; // шаблон вывода
+    switch ($_REQUEST[\'cultureKey\']) {
+        case \'en\':
+            /* switch the context */
+            $placeholders = array(
+                \'url1\' => \'15\',
+                \'url2\' => \'16\'
+            );
+            break;
+        case \'fr\':
+            /* switch the context */
+            $placeholders = array(
+                \'url1\' => \'24\',
+                \'url2\' => \'25\'
+            );
+            break;    
+        default:
+            /* Set the default context here */
+            $placeholders = array(
+                \'url1\' => \'13\',
+                \'url2\' => \'14\'
+            );
+            break;
+    }
+    $output = $modx->getChunk($tpl, $placeholders);
+    return $output;
+}',
+          'locked' => false,
+          'properties' => 
+          array (
+          ),
+          'moduleguid' => '',
+          'static' => false,
+          'static_file' => '',
+          'content' => 'if($modx->context->get(\'key\') != "mgr"){
+    $tpl = isset( $tpl ) ? $tpl : \'tpl_res\'; // шаблон вывода
+    switch ($_REQUEST[\'cultureKey\']) {
+        case \'en\':
+            /* switch the context */
+            $placeholders = array(
+                \'url1\' => \'15\',
+                \'url2\' => \'16\'
+            );
+            break;
+        case \'fr\':
+            /* switch the context */
+            $placeholders = array(
+                \'url1\' => \'24\',
+                \'url2\' => \'25\'
+            );
+            break;    
+        default:
+            /* Set the default context here */
+            $placeholders = array(
+                \'url1\' => \'13\',
+                \'url2\' => \'14\'
+            );
+            break;
+    }
+    $output = $modx->getChunk($tpl, $placeholders);
+    return $output;
+}',
+        ),
+        'policies' => 
+        array (
+        ),
+        'source' => 
+        array (
+          'id' => 1,
+          'name' => 'Filesystem',
+          'description' => '',
+          'class_key' => 'sources.modFileMediaSource',
+          'properties' => 
+          array (
+          ),
+          'is_stream' => true,
+        ),
+      ),
+      'getComments' => 
+      array (
+        'fields' => 
+        array (
+          'id' => 46,
+          'source' => 1,
+          'property_preprocess' => false,
+          'name' => 'getComments',
+          'description' => '',
+          'editor_type' => 0,
+          'category' => 13,
+          'cache_type' => 0,
+          'snippet' => '/* @var array $scriptProperties */
+/* @var Tickets $Tickets */
+$Tickets = $modx->getService(\'tickets\', \'Tickets\', $modx->getOption(\'tickets.core_path\', null, $modx->getOption(\'core_path\') . \'components/tickets/\') . \'model/tickets/\', $scriptProperties);
+$Tickets->initialize($modx->context->key, $scriptProperties);
+
+/** @var pdoFetch $pdoFetch */
+$fqn = $modx->getOption(\'pdoFetch.class\', null, \'pdotools.pdofetch\', true);
+if ($pdoClass = $modx->loadClass($fqn, \'\', false, true)) {
+	$pdoFetch = new $pdoClass($modx, $scriptProperties);
+}
+elseif ($pdoClass = $modx->loadClass($fqn, MODX_CORE_PATH . \'components/pdotools/model/\', false, true)) {
+	$pdoFetch = new $pdoClass($modx, $scriptProperties);
+}
+else {
+	$modx->log(modX::LOG_LEVEL_ERROR, \'Could not load pdoFetch from "MODX_CORE_PATH/components/pdotools/model/".\');
+	return false;
+}
+$pdoFetch->addTime(\'pdoTools loaded\');
+
+$tpl = $modx->getOption(\'tpl\', $scriptProperties, \'tpl.Tickets.comment.list.row\');
+$outputSeparator = $modx->getOption(\'outputSeparator\', $scriptProperties, "\\n");
+
+// Define threads of comments
+if (!empty($parents) || !empty($resources) || !empty($threads)) {
+	$where = array();
+	$options = array(
+		\'innerJoin\' => array(
+			\'Thread\' => array(
+				\'class\' => \'TicketThread\',
+				\'on\' => \'`Ticket`.`id` = `Thread`.`resource`\',
+			)
+		),
+		\'groupby\' => \'`Ticket`.`id`\',
+		\'select\' => array(\'Thread\' => \'`Thread`.`id`\'),
+		\'showUnpublished\' => !empty($showUnpublished),
+		\'showDeleted\' => !empty($showDeleted),
+		\'depth\' => isset($depth)
+			? (int)$depth
+			: 10,
+	);
+	if (!empty($parents)) {
+		$options[\'parents\'] = $parents;
+	}
+	if (!empty($resources)) {
+		$options[\'resources\'] = $resources;
+	}
+	if (!empty($threads)) {
+		$threads = array_map(\'trim\', explode(\',\', $threads));
+		$threads_in = $threads_out = array();
+		foreach ($threads as $v) {
+			if (!is_numeric($v)) {
+				continue;
+			}
+			if ($v[0] == \'-\') {
+				$threads_out[] = abs($v);
+			}
+			else {
+				$threads_in[] = abs($v);
+			}
+		}
+		if (!empty($threads_in)) {
+			$where[\'Thread.id:IN\'] = $threads_in;
+		}
+		if (!empty($threads_out)) {
+			$where[\'Thread.id:NOT IN\'] = $threads_out;
+		}
+	}
+
+	$rows = $pdoFetch->getCollection(\'Ticket\', $where, $options);
+	$threads = array();
+	foreach ($rows as $item) {
+		$threads[] = $item[\'id\'];
+	}
+}
+
+// Prepare query to db
+$class = \'TicketComment\';
+$where = array();
+if (empty($showUnpublished)) {
+	$where[\'published\'] = 1;
+}
+if (empty($showDeleted)) {
+	$where[\'deleted\'] = 0;
+}
+
+// Filter by user
+if (!empty($user)) {
+	$user = array_map(\'trim\', explode(\',\', $user));
+	$user_id = $user_username = array();
+	foreach ($user as $v) {
+		if (is_numeric($v)) {
+			$user_id[] = $v;
+		}
+		else {
+			$user_username[] = $v;
+		}
+	}
+	if (!empty($user_id) && !empty($user_username)) {
+		$where[] = \'(`User`.`id` IN (\' . implode(\',\', $user_id) . \') OR `User`.`username` IN (\\\'\' . implode(\'\\\',\\\'\', $user_username) . \'\\\'))\';
+	}
+	elseif (!empty($user_id)) {
+		$where[\'User.id:IN\'] = $user_id;
+	}
+	elseif (!empty($user_username)) {
+		$where[\'User.username:IN\'] = $user_username;
+	}
+}
+// Filter by threads
+if (!empty($threads)) {
+	$where[\'thread:IN\'] = $threads;
+}
+// Filter by comments
+if (!empty($comments)) {
+	$comments = array_map(\'trim\', explode(\',\', $comments));
+	$comments_in = $comments_out = array();
+	foreach ($comments as $v) {
+		if (!is_numeric($v)) {
+			continue;
+		}
+		if ($v[0] == \'-\') {
+			$comments_out[] = abs($v);
+		}
+		else {
+			$comments_in[] = abs($v);
+		}
+	}
+	if (!empty($comments_in)) {
+		$where[\'id:IN\'] = $comments_in;
+	}
+	if (!empty($comments_out)) {
+		$where[\'id:NOT IN\'] = $comments_out;
+	}
+}
+
+// Joining tables
+$innerJoin = array(
+	\'Thread\' => array(
+		\'class\' => \'TicketThread\',
+		\'on\' => \'`Thread`.`id` = `TicketComment`.`thread`\'
+	)
+);
+$leftJoin = array(
+	\'User\' => array(\'class\' => \'modUser\', \'on\' => \'`User`.`id` = `TicketComment`.`createdby`\'),
+	\'Profile\' => array(\'class\' => \'modUserProfile\', \'on\' => \'`Profile`.`internalKey` = `TicketComment`.`createdby`\'),
+	\'Ticket\' => array(\'class\' => \'Ticket\', \'on\' => \'`Ticket`.`id` = `Thread`.`resource`\'),
+	\'Section\' => array(\'class\' => \'TicketsSection\', \'on\' => \'`Section`.`id` = `Ticket`.`parent`\'),
+);
+if ($Tickets->authenticated) {
+	$leftJoin[\'Vote\'] = array(
+		\'class\' => \'TicketVote\',
+		\'on\' => \'`Vote`.`id` = `TicketComment`.`id` AND `Vote`.`class` = "TicketComment" AND `Vote`.`createdby` = \' . $modx->user->id
+	);
+	$leftJoin[\'Star\'] = array(
+		\'class\' => \'TicketStar\',
+		\'on\' => \'`Star`.`id` = `TicketComment`.`id` AND `Star`.`class` = "TicketComment" AND `Star`.`createdby` = \' . $modx->user->id
+	);
+}
+// Fields to select
+$select = array(
+	\'TicketComment\' => $modx->getSelectColumns(\'TicketComment\', \'TicketComment\', \'\', array(\'raw\'), true) . \', `rating` as `rating_total`\',
+	\'Thread\' => \'`Thread`.`resource`\',
+	\'User\' => \'`User`.`username`\',
+	\'Profile\' => $modx->getSelectColumns(\'modUserProfile\', \'Profile\', \'\', array(\'id\', \'email\'), true) . \',`Profile`.`email` as `user_email`\',
+	\'Ticket\' => !empty($includeContent)
+		? $modx->getSelectColumns(\'Ticket\', \'Ticket\', \'ticket.\')
+		: $modx->getSelectColumns(\'Ticket\', \'Ticket\', \'ticket.\', array(\'content\'), true),
+	\'Section\' => !empty($includeContent)
+		? $modx->getSelectColumns(\'TicketsSection\', \'Section\', \'section.\')
+		: $modx->getSelectColumns(\'TicketsSection\', \'Section\', \'section.\', array(\'content\'), true),
+);
+if ($Tickets->authenticated) {
+	$select[\'Vote\'] = \'`Vote`.`value` as `vote`\';
+	$select[\'Star\'] = \'COUNT(`Star`.`id`) as `star`\';
+}
+
+// Add custom parameters
+foreach (array(\'where\', \'select\', \'leftJoin\', \'innerJoin\') as $v) {
+	if (!empty($scriptProperties[$v])) {
+		$tmp = $modx->fromJSON($scriptProperties[$v]);
+		if (is_array($tmp)) {
+			$$v = array_merge($$v, $tmp);
+		}
+	}
+	unset($scriptProperties[$v]);
+}
+$pdoFetch->addTime(\'Conditions prepared\');
+
+$default = array(
+	\'class\' => $class,
+	\'where\' => $modx->toJSON($where),
+	\'innerJoin\' => $modx->toJSON($innerJoin),
+	\'leftJoin\' => $modx->toJSON($leftJoin),
+	\'select\' => $modx->toJSON($select),
+	\'sortby\' => $class . \'.createdon\',
+	\'sortdir\' => \'DESC\',
+	\'groupby\' => $class . \'.id\',
+	\'fastMode\' => true,
+	\'return\' => \'data\',
+	\'nestedChunkPrefix\' => \'tickets_\',
+);
+
+// Merge all properties and run!
+$pdoFetch->setConfig(array_merge($default, $scriptProperties), false);
+$pdoFetch->addTime(\'Query parameters prepared.\');
+$rows = $pdoFetch->run();
+
+$output = array();
+if (!empty($rows)) {
+	foreach ($rows as $row) {
+		$row[\'comments\'] = $modx->getCount(\'TicketComment\', array(\'published\' => 1, \'thread\' => $row[\'thread\']));;
+		$output[] = $Tickets->templateNode($row, $tpl);
+	}
+}
+$pdoFetch->addTime(\'Returning processed chunks\');
+$output = implode($outputSeparator, $output);
+
+$log = \'\';
+if ($modx->user->hasSessionContext(\'mgr\') && !empty($showLog)) {
+	$log .= \'<pre class="getCommentsLog">\' . print_r($pdoFetch->getTime(), 1) . \'</pre>\';
+}
+
+// Return output
+if (!empty($toSeparatePlaceholders)) {
+	$output[\'log\'] = $log;
+	$modx->setPlaceholders($output, $toSeparatePlaceholders);
+}
+else {
+	$output .= $log;
+
+	if (!empty($tplWrapper) && (!empty($wrapIfEmpty) || !empty($output))) {
+		$output = $pdoFetch->getChunk($tplWrapper, array(\'output\' => $output), $pdoFetch->config[\'fastMode\']);
+	}
+
+	if (!empty($toPlaceholder)) {
+		$modx->setPlaceholder($toPlaceholder, $output);
+	}
+	else {
+		return $output;
+	}
+}',
+          'locked' => false,
+          'properties' => 
+          array (
+            'tpl' => 
+            array (
+              'name' => 'tpl',
+              'desc' => 'tickets_prop_tpl',
+              'type' => 'textfield',
+              'options' => 
+              array (
+              ),
+              'value' => 'tpl.Tickets.comment.list.row',
+              'lexicon' => 'tickets:properties',
+              'area' => '',
+              'desc_trans' => 'Чанк оформления для каждого результата',
+              'area_trans' => '',
+            ),
+            'tplCommentDeleted' => 
+            array (
+              'name' => 'tplCommentDeleted',
+              'desc' => 'tickets_prop_tplCommentDeleted',
+              'type' => 'textfield',
+              'options' => 
+              array (
+              ),
+              'value' => 'tpl.Tickets.comment.one.deleted',
+              'lexicon' => 'tickets:properties',
+              'area' => '',
+              'desc_trans' => 'Чанк удалённого комментария.',
+              'area_trans' => '',
+            ),
+            'depth' => 
+            array (
+              'name' => 'depth',
+              'desc' => 'tickets_prop_depth',
+              'type' => 'numberfield',
+              'options' => 
+              array (
+              ),
+              'value' => 10,
+              'lexicon' => 'tickets:properties',
+              'area' => '',
+              'desc_trans' => 'Глубина поиска ресурсов от каждого родителя.',
+              'area_trans' => '',
+            ),
+            'threads' => 
+            array (
+              'name' => 'threads',
+              'desc' => 'tickets_prop_threads',
+              'type' => 'textfield',
+              'options' => 
+              array (
+              ),
+              'value' => '',
+              'lexicon' => 'tickets:properties',
+              'area' => '',
+              'desc_trans' => 'Список веток комментариев, через запятую, для вывода в результатах. Если id ветки начинается с минуса, то она исключается из выборки.',
+              'area_trans' => '',
+            ),
+            'parents' => 
+            array (
+              'name' => 'parents',
+              'desc' => 'tickets_prop_parents',
+              'type' => 'textfield',
+              'options' => 
+              array (
+              ),
+              'value' => '',
+              'lexicon' => 'tickets:properties',
+              'area' => '',
+              'desc_trans' => 'Список категорий, через запятую, для поиска результатов. По умолчанию выборка ограничена текущим родителем. Если поставить 0 - выборка не ограничивается.',
+              'area_trans' => '',
+            ),
+            'resources' => 
+            array (
+              'name' => 'resources',
+              'desc' => 'tickets_prop_resources',
+              'type' => 'textfield',
+              'options' => 
+              array (
+              ),
+              'value' => '',
+              'lexicon' => 'tickets:properties',
+              'area' => '',
+              'desc_trans' => 'Список ресурсов, через запятую, для вывода в результатах. Если id ресурса начинается с минуса, этот ресурс исключается из выборки.',
+              'area_trans' => '',
+            ),
+            'sortby' => 
+            array (
+              'name' => 'sortby',
+              'desc' => 'tickets_prop_sortby',
+              'type' => 'textfield',
+              'options' => 
+              array (
+              ),
+              'value' => 'createdon',
+              'lexicon' => 'tickets:properties',
+              'area' => '',
+              'desc_trans' => 'Сортировка выборки.',
+              'area_trans' => '',
+            ),
+            'sortdir' => 
+            array (
+              'name' => 'sortdir',
+              'desc' => 'tickets_prop_sortdir',
+              'type' => 'list',
+              'options' => 
+              array (
+                0 => 
+                array (
+                  'text' => 'ASC',
+                  'value' => 'ASC',
+                  'name' => 'ASC',
+                ),
+                1 => 
+                array (
+                  'text' => 'DESC',
+                  'value' => 'DESC',
+                  'name' => 'DESC',
+                ),
+              ),
+              'value' => 'DESC',
+              'lexicon' => 'tickets:properties',
+              'area' => '',
+              'desc_trans' => 'Направление сортировки',
+              'area_trans' => '',
+            ),
+            'includeContent' => 
+            array (
+              'name' => 'includeContent',
+              'desc' => 'tickets_prop_includeContent',
+              'type' => 'combo-boolean',
+              'options' => 
+              array (
+              ),
+              'value' => false,
+              'lexicon' => 'tickets:properties',
+              'area' => '',
+              'desc_trans' => 'Выбирать поле "content" у ресурсов.',
+              'area_trans' => '',
+            ),
+            'toPlaceholder' => 
+            array (
+              'name' => 'toPlaceholder',
+              'desc' => 'tickets_prop_toPlaceholder',
+              'type' => 'textfield',
+              'options' => 
+              array (
+              ),
+              'value' => '',
+              'lexicon' => 'tickets:properties',
+              'area' => '',
+              'desc_trans' => 'Если не пусто, сниппет сохранит все данные в плейсхолдер с этим именем, вместо вывода не экран.',
+              'area_trans' => '',
+            ),
+            'where' => 
+            array (
+              'name' => 'where',
+              'desc' => 'tickets_prop_where',
+              'type' => 'textfield',
+              'options' => 
+              array (
+              ),
+              'value' => '',
+              'lexicon' => 'tickets:properties',
+              'area' => '',
+              'desc_trans' => 'Строка, закодированная в JSON, с дополнительными условиями выборки.',
+              'area_trans' => '',
+            ),
+            'outputSeparator' => 
+            array (
+              'name' => 'outputSeparator',
+              'desc' => 'tickets_prop_outputSeparator',
+              'type' => 'textfield',
+              'options' => 
+              array (
+              ),
+              'value' => '
+',
+              'lexicon' => 'tickets:properties',
+              'area' => '',
+              'desc_trans' => 'Необязательная строка для разделения результатов работы.',
+              'area_trans' => '',
+            ),
+            'showLog' => 
+            array (
+              'name' => 'showLog',
+              'desc' => 'tickets_prop_showLog',
+              'type' => 'combo-boolean',
+              'options' => 
+              array (
+              ),
+              'value' => false,
+              'lexicon' => 'tickets:properties',
+              'area' => '',
+              'desc_trans' => 'Показывать дополнительную информацию о работе сниппета. Только для авторизованных в контекте "mgr".',
+              'area_trans' => '',
+            ),
+            'showUnpublished' => 
+            array (
+              'name' => 'showUnpublished',
+              'desc' => 'tickets_prop_showUnpublished',
+              'type' => 'combo-boolean',
+              'options' => 
+              array (
+              ),
+              'value' => false,
+              'lexicon' => 'tickets:properties',
+              'area' => '',
+              'desc_trans' => 'Показывать неопубликованные ресурсы.',
+              'area_trans' => '',
+            ),
+            'showDeleted' => 
+            array (
+              'name' => 'showDeleted',
+              'desc' => 'tickets_prop_showDeleted',
+              'type' => 'combo-boolean',
+              'options' => 
+              array (
+              ),
+              'value' => false,
+              'lexicon' => 'tickets:properties',
+              'area' => '',
+              'desc_trans' => 'Показывать удалённые ресурсы.',
+              'area_trans' => '',
+            ),
+          ),
+          'moduleguid' => '',
+          'static' => false,
+          'static_file' => 'core/components/tickets/elements/snippets/snippet.get_comments.php',
+          'content' => '/* @var array $scriptProperties */
+/* @var Tickets $Tickets */
+$Tickets = $modx->getService(\'tickets\', \'Tickets\', $modx->getOption(\'tickets.core_path\', null, $modx->getOption(\'core_path\') . \'components/tickets/\') . \'model/tickets/\', $scriptProperties);
+$Tickets->initialize($modx->context->key, $scriptProperties);
+
+/** @var pdoFetch $pdoFetch */
+$fqn = $modx->getOption(\'pdoFetch.class\', null, \'pdotools.pdofetch\', true);
+if ($pdoClass = $modx->loadClass($fqn, \'\', false, true)) {
+	$pdoFetch = new $pdoClass($modx, $scriptProperties);
+}
+elseif ($pdoClass = $modx->loadClass($fqn, MODX_CORE_PATH . \'components/pdotools/model/\', false, true)) {
+	$pdoFetch = new $pdoClass($modx, $scriptProperties);
+}
+else {
+	$modx->log(modX::LOG_LEVEL_ERROR, \'Could not load pdoFetch from "MODX_CORE_PATH/components/pdotools/model/".\');
+	return false;
+}
+$pdoFetch->addTime(\'pdoTools loaded\');
+
+$tpl = $modx->getOption(\'tpl\', $scriptProperties, \'tpl.Tickets.comment.list.row\');
+$outputSeparator = $modx->getOption(\'outputSeparator\', $scriptProperties, "\\n");
+
+// Define threads of comments
+if (!empty($parents) || !empty($resources) || !empty($threads)) {
+	$where = array();
+	$options = array(
+		\'innerJoin\' => array(
+			\'Thread\' => array(
+				\'class\' => \'TicketThread\',
+				\'on\' => \'`Ticket`.`id` = `Thread`.`resource`\',
+			)
+		),
+		\'groupby\' => \'`Ticket`.`id`\',
+		\'select\' => array(\'Thread\' => \'`Thread`.`id`\'),
+		\'showUnpublished\' => !empty($showUnpublished),
+		\'showDeleted\' => !empty($showDeleted),
+		\'depth\' => isset($depth)
+			? (int)$depth
+			: 10,
+	);
+	if (!empty($parents)) {
+		$options[\'parents\'] = $parents;
+	}
+	if (!empty($resources)) {
+		$options[\'resources\'] = $resources;
+	}
+	if (!empty($threads)) {
+		$threads = array_map(\'trim\', explode(\',\', $threads));
+		$threads_in = $threads_out = array();
+		foreach ($threads as $v) {
+			if (!is_numeric($v)) {
+				continue;
+			}
+			if ($v[0] == \'-\') {
+				$threads_out[] = abs($v);
+			}
+			else {
+				$threads_in[] = abs($v);
+			}
+		}
+		if (!empty($threads_in)) {
+			$where[\'Thread.id:IN\'] = $threads_in;
+		}
+		if (!empty($threads_out)) {
+			$where[\'Thread.id:NOT IN\'] = $threads_out;
+		}
+	}
+
+	$rows = $pdoFetch->getCollection(\'Ticket\', $where, $options);
+	$threads = array();
+	foreach ($rows as $item) {
+		$threads[] = $item[\'id\'];
+	}
+}
+
+// Prepare query to db
+$class = \'TicketComment\';
+$where = array();
+if (empty($showUnpublished)) {
+	$where[\'published\'] = 1;
+}
+if (empty($showDeleted)) {
+	$where[\'deleted\'] = 0;
+}
+
+// Filter by user
+if (!empty($user)) {
+	$user = array_map(\'trim\', explode(\',\', $user));
+	$user_id = $user_username = array();
+	foreach ($user as $v) {
+		if (is_numeric($v)) {
+			$user_id[] = $v;
+		}
+		else {
+			$user_username[] = $v;
+		}
+	}
+	if (!empty($user_id) && !empty($user_username)) {
+		$where[] = \'(`User`.`id` IN (\' . implode(\',\', $user_id) . \') OR `User`.`username` IN (\\\'\' . implode(\'\\\',\\\'\', $user_username) . \'\\\'))\';
+	}
+	elseif (!empty($user_id)) {
+		$where[\'User.id:IN\'] = $user_id;
+	}
+	elseif (!empty($user_username)) {
+		$where[\'User.username:IN\'] = $user_username;
+	}
+}
+// Filter by threads
+if (!empty($threads)) {
+	$where[\'thread:IN\'] = $threads;
+}
+// Filter by comments
+if (!empty($comments)) {
+	$comments = array_map(\'trim\', explode(\',\', $comments));
+	$comments_in = $comments_out = array();
+	foreach ($comments as $v) {
+		if (!is_numeric($v)) {
+			continue;
+		}
+		if ($v[0] == \'-\') {
+			$comments_out[] = abs($v);
+		}
+		else {
+			$comments_in[] = abs($v);
+		}
+	}
+	if (!empty($comments_in)) {
+		$where[\'id:IN\'] = $comments_in;
+	}
+	if (!empty($comments_out)) {
+		$where[\'id:NOT IN\'] = $comments_out;
+	}
+}
+
+// Joining tables
+$innerJoin = array(
+	\'Thread\' => array(
+		\'class\' => \'TicketThread\',
+		\'on\' => \'`Thread`.`id` = `TicketComment`.`thread`\'
+	)
+);
+$leftJoin = array(
+	\'User\' => array(\'class\' => \'modUser\', \'on\' => \'`User`.`id` = `TicketComment`.`createdby`\'),
+	\'Profile\' => array(\'class\' => \'modUserProfile\', \'on\' => \'`Profile`.`internalKey` = `TicketComment`.`createdby`\'),
+	\'Ticket\' => array(\'class\' => \'Ticket\', \'on\' => \'`Ticket`.`id` = `Thread`.`resource`\'),
+	\'Section\' => array(\'class\' => \'TicketsSection\', \'on\' => \'`Section`.`id` = `Ticket`.`parent`\'),
+);
+if ($Tickets->authenticated) {
+	$leftJoin[\'Vote\'] = array(
+		\'class\' => \'TicketVote\',
+		\'on\' => \'`Vote`.`id` = `TicketComment`.`id` AND `Vote`.`class` = "TicketComment" AND `Vote`.`createdby` = \' . $modx->user->id
+	);
+	$leftJoin[\'Star\'] = array(
+		\'class\' => \'TicketStar\',
+		\'on\' => \'`Star`.`id` = `TicketComment`.`id` AND `Star`.`class` = "TicketComment" AND `Star`.`createdby` = \' . $modx->user->id
+	);
+}
+// Fields to select
+$select = array(
+	\'TicketComment\' => $modx->getSelectColumns(\'TicketComment\', \'TicketComment\', \'\', array(\'raw\'), true) . \', `rating` as `rating_total`\',
+	\'Thread\' => \'`Thread`.`resource`\',
+	\'User\' => \'`User`.`username`\',
+	\'Profile\' => $modx->getSelectColumns(\'modUserProfile\', \'Profile\', \'\', array(\'id\', \'email\'), true) . \',`Profile`.`email` as `user_email`\',
+	\'Ticket\' => !empty($includeContent)
+		? $modx->getSelectColumns(\'Ticket\', \'Ticket\', \'ticket.\')
+		: $modx->getSelectColumns(\'Ticket\', \'Ticket\', \'ticket.\', array(\'content\'), true),
+	\'Section\' => !empty($includeContent)
+		? $modx->getSelectColumns(\'TicketsSection\', \'Section\', \'section.\')
+		: $modx->getSelectColumns(\'TicketsSection\', \'Section\', \'section.\', array(\'content\'), true),
+);
+if ($Tickets->authenticated) {
+	$select[\'Vote\'] = \'`Vote`.`value` as `vote`\';
+	$select[\'Star\'] = \'COUNT(`Star`.`id`) as `star`\';
+}
+
+// Add custom parameters
+foreach (array(\'where\', \'select\', \'leftJoin\', \'innerJoin\') as $v) {
+	if (!empty($scriptProperties[$v])) {
+		$tmp = $modx->fromJSON($scriptProperties[$v]);
+		if (is_array($tmp)) {
+			$$v = array_merge($$v, $tmp);
+		}
+	}
+	unset($scriptProperties[$v]);
+}
+$pdoFetch->addTime(\'Conditions prepared\');
+
+$default = array(
+	\'class\' => $class,
+	\'where\' => $modx->toJSON($where),
+	\'innerJoin\' => $modx->toJSON($innerJoin),
+	\'leftJoin\' => $modx->toJSON($leftJoin),
+	\'select\' => $modx->toJSON($select),
+	\'sortby\' => $class . \'.createdon\',
+	\'sortdir\' => \'DESC\',
+	\'groupby\' => $class . \'.id\',
+	\'fastMode\' => true,
+	\'return\' => \'data\',
+	\'nestedChunkPrefix\' => \'tickets_\',
+);
+
+// Merge all properties and run!
+$pdoFetch->setConfig(array_merge($default, $scriptProperties), false);
+$pdoFetch->addTime(\'Query parameters prepared.\');
+$rows = $pdoFetch->run();
+
+$output = array();
+if (!empty($rows)) {
+	foreach ($rows as $row) {
+		$row[\'comments\'] = $modx->getCount(\'TicketComment\', array(\'published\' => 1, \'thread\' => $row[\'thread\']));;
+		$output[] = $Tickets->templateNode($row, $tpl);
+	}
+}
+$pdoFetch->addTime(\'Returning processed chunks\');
+$output = implode($outputSeparator, $output);
+
+$log = \'\';
+if ($modx->user->hasSessionContext(\'mgr\') && !empty($showLog)) {
+	$log .= \'<pre class="getCommentsLog">\' . print_r($pdoFetch->getTime(), 1) . \'</pre>\';
+}
+
+// Return output
+if (!empty($toSeparatePlaceholders)) {
+	$output[\'log\'] = $log;
+	$modx->setPlaceholders($output, $toSeparatePlaceholders);
+}
+else {
+	$output .= $log;
+
+	if (!empty($tplWrapper) && (!empty($wrapIfEmpty) || !empty($output))) {
+		$output = $pdoFetch->getChunk($tplWrapper, array(\'output\' => $output), $pdoFetch->config[\'fastMode\']);
+	}
+
+	if (!empty($toPlaceholder)) {
+		$modx->setPlaceholder($toPlaceholder, $output);
+	}
+	else {
+		return $output;
+	}
+}',
+        ),
+        'policies' => 
+        array (
+        ),
+        'source' => 
+        array (
+          'id' => 1,
+          'name' => 'Filesystem',
+          'description' => '',
+          'class_key' => 'sources.modFileMediaSource',
+          'properties' => 
+          array (
+          ),
+          'is_stream' => true,
+        ),
+      ),
       'getFooter' => 
       array (
         'fields' => 
@@ -2534,14 +3503,23 @@ return $search->output($output,$scriptProperties[\'toPlaceholder\']);',
             /* switch the context */
             $placeholders = array(
                 \'url1\' => \'10\',
-                \'url2\' => \'6\'
+                \'url2\' => \'6\',
+                \'urlTravel\' => \'en-contact.html#travel\'
+            );
+            break;
+        case \'fr\':
+            $placeholders = array(
+                \'url1\' => \'22\',
+                \'url2\' => \'19\',
+                \'urlTravel\' => \'fr-contact.html#travel\'
             );
             break;
         default:
             /* Set the default context here */
             $placeholders = array(
                 \'url1\' => \'4\',
-                \'url2\' => \'5\'
+                \'url2\' => \'5\',
+                \'urlTravel\' => \'contact.html#travel\'
             );
             break;
     }
@@ -2562,14 +3540,23 @@ return $search->output($output,$scriptProperties[\'toPlaceholder\']);',
             /* switch the context */
             $placeholders = array(
                 \'url1\' => \'10\',
-                \'url2\' => \'6\'
+                \'url2\' => \'6\',
+                \'urlTravel\' => \'en-contact.html#travel\'
+            );
+            break;
+        case \'fr\':
+            $placeholders = array(
+                \'url1\' => \'22\',
+                \'url2\' => \'19\',
+                \'urlTravel\' => \'fr-contact.html#travel\'
             );
             break;
         default:
             /* Set the default context here */
             $placeholders = array(
                 \'url1\' => \'4\',
-                \'url2\' => \'5\'
+                \'url2\' => \'5\',
+                \'urlTravel\' => \'contact.html#travel\'
             );
             break;
     }

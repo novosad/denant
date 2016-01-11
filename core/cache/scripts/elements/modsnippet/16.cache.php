@@ -5,14 +5,23 @@
             /* switch the context */
             $placeholders = array(
                 \'url1\' => \'10\',
-                \'url2\' => \'6\'
+                \'url2\' => \'6\',
+                \'urlTravel\' => \'en-contact.html#travel\'
+            );
+            break;
+        case \'fr\':
+            $placeholders = array(
+                \'url1\' => \'22\',
+                \'url2\' => \'19\',
+                \'urlTravel\' => \'fr-contact.html#travel\'
             );
             break;
         default:
             /* Set the default context here */
             $placeholders = array(
                 \'url1\' => \'4\',
-                \'url2\' => \'5\'
+                \'url2\' => \'5\',
+                \'urlTravel\' => \'contact.html#travel\'
             );
             break;
     }

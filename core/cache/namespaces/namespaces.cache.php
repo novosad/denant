@@ -2,55 +2,79 @@
   'ace' => 
   array (
     'name' => 'ace',
-    'path' => 'Z:/home/denant.loc/www/core/components/ace/',
+    'path' => '/home/novosad/public_html/denant.web/core/components/ace/',
     'assets_path' => '',
   ),
   'babel' => 
   array (
     'name' => 'babel',
-    'path' => 'Z:/home/denant.loc/www/core/components/babel/',
+    'path' => '/home/novosad/public_html/denant.web/core/components/babel/',
     'assets_path' => '',
   ),
   'breadcrumbs' => 
   array (
     'name' => 'breadcrumbs',
-    'path' => 'Z:/home/denant.loc/www/core/components/breadcrumbs/',
+    'path' => '/home/novosad/public_html/denant.web/core/components/breadcrumbs/',
     'assets_path' => '',
   ),
   'core' => 
   array (
     'name' => 'core',
-    'path' => 'Z:/home/denant.loc/www/manager/',
-    'assets_path' => 'Z:/home/denant.loc/www/manager/assets/',
+    'path' => '/home/novosad/public_html/denant.web/manager/',
+    'assets_path' => '/home/novosad/public_html/denant.web/manager/assets/',
   ),
   'formit' => 
   array (
     'name' => 'formit',
-    'path' => 'Z:/home/denant.loc/www/core/components/formit/',
+    'path' => '/home/novosad/public_html/denant.web/core/components/formit/',
+    'assets_path' => '',
+  ),
+  'jevix' => 
+  array (
+    'name' => 'jevix',
+    'path' => '/home/novosad/public_html/denant.web/core/components/jevix/',
+    'assets_path' => '',
+  ),
+  'pdotools' => 
+  array (
+    'name' => 'pdotools',
+    'path' => '/home/novosad/public_html/denant.web/core/components/pdotools/',
+    'assets_path' => '',
+  ),
+  'sdstore' => 
+  array (
+    'name' => 'sdstore',
+    'path' => '/home/novosad/public_html/denant.web/core/components/sdstore/',
     'assets_path' => '',
   ),
   'sisea' => 
   array (
     'name' => 'sisea',
-    'path' => 'Z:/home/denant.loc/www/core/components/simplesearch/',
-    'assets_path' => 'Z:/home/denant.loc/www/assets/components/simplesearch/',
+    'path' => '/home/novosad/public_html/denant.web/core/components/simplesearch/',
+    'assets_path' => '/home/novosad/public_html/denant.web/assets/components/simplesearch/',
+  ),
+  'tickets' => 
+  array (
+    'name' => 'tickets',
+    'path' => '/home/novosad/public_html/denant.web/core/components/tickets/',
+    'assets_path' => '',
   ),
   'tinymce' => 
   array (
     'name' => 'tinymce',
-    'path' => 'Z:/home/denant.loc/www/core/components/tinymce/',
+    'path' => '/home/novosad/public_html/denant.web/core/components/tinymce/',
     'assets_path' => '',
   ),
   'translit' => 
   array (
     'name' => 'translit',
-    'path' => 'Z:/home/denant.loc/www/core/components/translit/',
+    'path' => '/home/novosad/public_html/denant.web/core/components/translit/',
     'assets_path' => '',
   ),
   'wayfinder' => 
   array (
     'name' => 'wayfinder',
-    'path' => 'Z:/home/denant.loc/www/core/components/wayfinder/',
+    'path' => '/home/novosad/public_html/denant.web/core/components/wayfinder/',
     'assets_path' => '',
   ),
 );

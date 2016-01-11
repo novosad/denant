@@ -11,8 +11,6 @@
 RewriteEngine On
 RewriteBase /
 
-
-
 # Rewrite www.domain.com -> domain.com -- used with SEO Strict URLs plugin
 #RewriteCond %{HTTP_HOST} .
 #RewriteCond %{HTTP_HOST} !^example-domain-please-change\.com [NC]
@@ -26,8 +24,8 @@ RewriteBase /
 #RewriteRule (.*) http://www.example-domain-please-change.com/$1 [R=301,L]
 
 RewriteCond %{HTTP_HOST} .
-RewriteCond %{HTTP_HOST} !^denant\.loc [NC]
-RewriteRule (.*) http://denant.loc/$1 [R=301,L]
+RewriteCond %{HTTP_HOST} !^denant\.web [NC]
+RewriteRule (.*) http://denant.web/$1 [R=301,L]
 
 # Rewrite secure requests properly to prevent SSL cert warnings, e.g. prevent 
 # https://www.domain.com when your cert only allows https://secure.domain.com
@@ -38,24 +36,24 @@ RewriteRule (.*) http://denant.loc/$1 [R=301,L]
 # The Friendly URLs part
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule ^(ru|en)?/?(.*)$ index.php?cultureKey=$1&q=$2 [L,QSA]
+RewriteRule ^(ru|en|fr)?/?(.*)$ index.php?cultureKey=$1&q=$2 [L,QSA]
 
 # redirect all requests to /de/favicon.ico and /nl/favicon.ico
 # to /favicon.ico
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME} !-f
-RewriteRule ^(ru|en)/favicon.ico$ favicon.ico [L,QSA]
+RewriteRule ^(ru|en|fr)/favicon.ico$ favicon.ico [L,QSA]
 
 # redirect all requests to /de/assets* and /nl/assets* to /assets*
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME} !-f
-RewriteRule ^(ru|en)/assets(.*)$ assets$2 [L,QSA]
+RewriteRule ^(ru|en|fr)/assets(.*)$ assets$2 [L,QSA]
 
 # redirect all other requests to /de/* and /nl/*
 # to index.php and set the cultureKey parameter
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule ^(ru|en)?/?(.*)$ index.php?cultureKey=$1&q=$2 [L,QSA]
+RewriteRule ^(ru|en|fr)?/?(.*)$ index.php?cultureKey=$1&q=$2 [L,QSA]
 
 
 # Make sure .htc files are served with the proper MIME type, which is critical

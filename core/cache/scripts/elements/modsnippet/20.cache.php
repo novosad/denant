@@ -7,6 +7,12 @@
                 \'lang\' => \'12\'
             );
             break;
+        case \'fr\':
+            /* switch the context */
+            $placeholders = array(
+                \'lang\' => \'23\'
+            );
+            break;    
         default:
             /* Set the default context here */
             $placeholders = array(

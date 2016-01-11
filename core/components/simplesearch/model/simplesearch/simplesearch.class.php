@@ -24,12 +24,14 @@
  *
  * @package simplesearch
  */
+
 /**
  * The base class for SimpleSearch
  *
  * @package
  */
-class SimpleSearch {
+class SimpleSearch
+{
     /** @var modX $modx */
     public $modx;
     /** @var array $config */
@@ -53,18 +55,19 @@ class SimpleSearch {
     /** @var array $response */
     public $response = array();
 
-    function __construct(modX &$modx,array $config = array()) {
-    	$this->modx =& $modx;
-        $corePath = $this->modx->getOption('sisea.core_path',null,$this->modx->getOption('core_path').'components/simplesearch/');
-        $assetsUrl = $this->modx->getOption('sisea.assets_url',null,$this->modx->getOption('assets_url').'components/simplesearch/');
+    function __construct(modX &$modx, array $config = array())
+    {
+        $this->modx =& $modx;
+        $corePath = $this->modx->getOption('sisea.core_path', null, $this->modx->getOption('core_path') . 'components/simplesearch/');
+        $assetsUrl = $this->modx->getOption('sisea.assets_url', null, $this->modx->getOption('assets_url') . 'components/simplesearch/');
 
         $this->config = array_merge(array(
             'corePath' => $corePath,
-            'chunksPath' => $corePath.'elements/chunks/',
-            'snippetsPath' => $corePath.'elements/snippets/',
-            'modelPath' => $corePath.'model/',
+            'chunksPath' => $corePath . 'elements/chunks/',
+            'snippetsPath' => $corePath . 'elements/snippets/',
+            'modelPath' => $corePath . 'model/',
             'assetsUrl' => $assetsUrl,
-        ),$config);
+        ), $config);
         $this->modx->lexicon->load('sisea:default');
     }
 
@@ -77,12 +80,13 @@ class SimpleSearch {
      * @param array $properties The properties for the Chunk
      * @return string The processed content of the Chunk
      */
-    public function getChunk($name,$properties = array()) {
+    public function getChunk($name, $properties = array())
+    {
         $chunk = null;
         if (!isset($this->chunks[$name])) {
             $chunk = $this->_getTplChunk($name);
             if (empty($chunk)) {
-                $chunk = $this->modx->getObject('modChunk',array('name' => $name),true);
+                $chunk = $this->modx->getObject('modChunk', array('name' => $name), true);
                 if ($chunk == false) return false;
             }
             $this->chunks[$name] = $chunk->getContent();
@@ -104,18 +108,19 @@ class SimpleSearch {
      * @return modChunk/boolean Returns the modChunk object if found, otherwise
      * false.
      */
-    private function _getTplChunk($name,$postFix = '.chunk.tpl') {
+    private function _getTplChunk($name, $postFix = '.chunk.tpl')
+    {
         $chunk = false;
         if (file_exists($name)) {
             $f = $name;
         } else {
-            $f = $this->config['chunksPath'].strtolower($name).$postFix;
+            $f = $this->config['chunksPath'] . strtolower($name) . $postFix;
         }
         if (file_exists($f)) {
             $o = file_get_contents($f);
             /** @var modChunk $chunk */
             $chunk = $this->modx->newObject('modChunk');
-            $chunk->set('name',$name);
+            $chunk->set('name', $name);
             $chunk->setContent($o);
         }
         return $chunk;
@@ -127,20 +132,21 @@ class SimpleSearch {
      * @param array $scriptProperties
      * @return SimpleSearchDriver
      */
-    public function loadDriver(array $scriptProperties = array()) {
-        $driverClass = $this->modx->getOption('sisea.driver_class',$scriptProperties,'SimpleSearchDriverBasic');
-        $driverClassPath = $this->modx->getOption('sisea.driver_class_path',$scriptProperties,'');
-        if (empty($driverClassPath)) $driverClassPath = $this->config['modelPath'].'simplesearch/driver/';
-        $driverDatabaseSpecific = $this->modx->getOption('sisea.driver_db_specific',$scriptProperties,true);
+    public function loadDriver(array $scriptProperties = array())
+    {
+        $driverClass = $this->modx->getOption('sisea.driver_class', $scriptProperties, 'SimpleSearchDriverBasic');
+        $driverClassPath = $this->modx->getOption('sisea.driver_class_path', $scriptProperties, '');
+        if (empty($driverClassPath)) $driverClassPath = $this->config['modelPath'] . 'simplesearch/driver/';
+        $driverDatabaseSpecific = $this->modx->getOption('sisea.driver_db_specific', $scriptProperties, true);
         if ($driverDatabaseSpecific) {
             $dbType = $this->modx->config['dbtype'];
-            $driverClassPath = $driverClassPath.$dbType.'/';
-            $driverClassName = $driverClass.'_'.$dbType;
+            $driverClassPath = $driverClassPath . $dbType . '/';
+            $driverClassName = $driverClass . '_' . $dbType;
         } else {
             $driverClassName = $driverClass;
         }
-        $this->modx->loadClass($driverClass,$driverClassPath,true,true);
-        $this->driver = new $driverClassName($this,$scriptProperties);
+        $this->modx->loadClass($driverClass, $driverClassPath, true, true);
+        $this->driver = new $driverClassName($this, $scriptProperties);
         return $this->driver;
     }
 
@@ -150,21 +156,22 @@ class SimpleSearch {
      * @param string $str The string to parse.
      * @return string The parsed and cleansed string.
      */
-    public function parseSearchString($str = '') {
-        $minChars = $this->modx->getOption('minChars',$this->config,4);
+    public function parseSearchString($str = '')
+    {
+        $minChars = $this->modx->getOption('minChars', $this->config, 4);
 
-        $this->searchArray = explode(' ',$str);
+        $this->searchArray = explode(' ', $str);
         $this->searchArray = $this->modx->sanitize($this->searchArray, $this->modx->sanitizePatterns);
-        $reserved = array('AND','OR','IN','NOT');
+        $reserved = array('AND', 'OR', 'IN', 'NOT');
         foreach ($this->searchArray as $key => $term) {
             $this->searchArray[$key] = strip_tags($term);
-            if (strlen($term) < $minChars && !in_array($term,$reserved)) {
+            if (strlen($term) < $minChars && !in_array($term, $reserved)) {
                 unset($this->searchArray[$key]);
             }
         }
         $this->searchString = implode(' ', $this->searchArray);
         // one last pass to filter for modx tags
-        $this->searchString = str_replace(array('[[',']]'),array('&#91;&#91;','&#93;&#93;'),$this->searchString);
+        $this->searchString = str_replace(array('[[', ']]'), array('&#91;&#91;', '&#93;&#93;'), $this->searchString);
         return $this->searchString;
     }
 
@@ -175,10 +182,11 @@ class SimpleSearch {
      * @param array $scriptProperties
      * @return array An array of modResource results of the search.
      */
-    public function getSearchResults($str = '',array $scriptProperties = array()) {
-      //  if (!empty($str)) $this->searchString = strip_tags($this->modx->sanitizeString($str));
+    public function getSearchResults($str = '', array $scriptProperties = array())
+    {
+        //  if (!empty($str)) $this->searchString = strip_tags($this->modx->sanitizeString($str));
         $this->loadDriver($scriptProperties);
-        $this->response = $this->driver->search($str,$scriptProperties);
+        $this->response = $this->driver->search($str, $scriptProperties);
         $this->searchResultsCount = $this->response['total'];
         $this->docs = $this->response['results'];
         return $this->response;
@@ -193,16 +201,17 @@ class SimpleSearch {
      * @param bool|int $total The total of records. Will default to the main count if not passed
      * @return string Pagination links.
      */
-    public function getPagination($searchString = '',$perPage = 10,$separator = ' | ',$total = false) {
+    public function getPagination($searchString = '', $perPage = 10, $separator = ' | ', $total = false)
+    {
         if ($total === false) $total = $this->response['total'];
         $pagination = '';
 
         /* setup default properties */
-        $searchIndex = $this->modx->getOption('searchIndex',$this->config,'search');
-        $searchOffset = $this->modx->getOption('offsetIndex',$this->config,'sisea_offset');
-        $pageTpl = $this->modx->getOption('pageTpl',$this->config,'PageLink');
-        $currentPageTpl = $this->modx->getOption('currentPageTpl',$this->config,'CurrentPageLink');
-        $urlScheme = $this->modx->getOption('urlScheme',$this->config,-1);
+        $searchIndex = $this->modx->getOption('searchIndex', $this->config, 'search');
+        $searchOffset = $this->modx->getOption('offsetIndex', $this->config, 'sisea_offset');
+        $pageTpl = $this->modx->getOption('pageTpl', $this->config, 'PageLink');
+        $currentPageTpl = $this->modx->getOption('currentPageTpl', $this->config, 'CurrentPageLink');
+        $urlScheme = $this->modx->getOption('urlScheme', $this->config, -1);
 
         /* get search string */
         if (empty($searchString)) {
@@ -214,76 +223,76 @@ class SimpleSearch {
         $pageLinkCount = ceil($total / $perPage);
         $pageArray = array();
         $id = $this->modx->resource->get('id');
-		$pageLimit = $this->modx->getOption('pageLimit',$this->config,0);
-		$pageFirstTpl = $this->modx->getOption('pageFirstTpl',$this->config,$pageTpl);
-		$pageLastTpl = $this->modx->getOption('pageLastTpl',$this->config,$pageTpl);
-		$pagePrevTpl = $this->modx->getOption('pagePrevTpl',$this->config,$pageTpl);
-		$pageNextTpl = $this->modx->getOption('pageNextTpl',$this->config,$pageTpl);
+        $pageLimit = $this->modx->getOption('pageLimit', $this->config, 0);
+        $pageFirstTpl = $this->modx->getOption('pageFirstTpl', $this->config, $pageTpl);
+        $pageLastTpl = $this->modx->getOption('pageLastTpl', $this->config, $pageTpl);
+        $pagePrevTpl = $this->modx->getOption('pagePrevTpl', $this->config, $pageTpl);
+        $pageNextTpl = $this->modx->getOption('pageNextTpl', $this->config, $pageTpl);
         for ($i = 0; $i < $pageLinkCount; ++$i) {
             $pageArray['separator'] = $separator;
             $pageArray['offset'] = $i * $perPage;
-            $currentOffset = $this->modx->getOption($searchOffset,$_GET,0);
-			if ($pageLimit > 0 && $i+1 == 1 && $pageArray['offset'] != $currentOffset && !empty($pageFirstTpl)) {
-				$parameters = $this->modx->request->getParameters();
-				$parameters = array_merge($parameters,array(
-					$searchOffset => $pageArray['offset'],
-					$searchIndex => $searchString,
-				));
-				$pageArray['text'] = 'First';
-				$pageArray['link'] = $this->modx->makeUrl($id, '',$parameters,$urlScheme);
-				$pagination .= $this->getChunk($pageFirstTpl,$pageArray);
-				if (!empty($pagePrevTpl) && ($currentOffset - $perPage) >= $perPage) {
-					$parameters = $this->modx->request->getParameters();
-					$parameters = array_merge($parameters,array(
-						$searchOffset => $currentOffset - $perPage,
-						$searchIndex => $searchString,
-					));
-					$pageArray['text'] = '&lt;&lt;';
-					$pageArray['link'] = $this->modx->makeUrl($id, '',$parameters,$urlScheme);
-					$pagination .= $this->getChunk($pagePrevTpl,$pageArray);
-				}
-			}
-			if (empty($pageLimit) || ($pageArray['offset'] >= $currentOffset - ($pageLimit * $perPage) && $pageArray['offset'] <= $currentOffset + ($pageLimit * $perPage))) {
-				if ($currentOffset == $pageArray['offset']) {
-					$pageArray['text'] = $i+1;
-					$pageArray['link'] = $i+1;
-					$pagination .= $this->getChunk($currentPageTpl,$pageArray);
-				} else {
-					$parameters = $this->modx->request->getParameters();
-					$parameters = array_merge($parameters,array(
-						$searchOffset => $pageArray['offset'],
-						$searchIndex => $searchString,
-					));
-					$pageArray['text'] = $i+1;
-					$pageArray['link'] = $this->modx->makeUrl($id, '',$parameters,$urlScheme);
-					$pagination .= $this->getChunk($pageTpl,$pageArray);
-				}
-			}
-			if ($pageLimit > 0 && $i+1 == $pageLinkCount && $pageArray['offset'] != $currentOffset && !empty($pageLastTpl)) {
-				if (!empty($pageNextTpl) && ($currentOffset + $perPage) <= $total) {
-					$parameters = $this->modx->request->getParameters();
-					$parameters = array_merge($parameters,array(
-						$searchOffset => $currentOffset + $perPage,
-						$searchIndex => $searchString,
-					));
-					$pageArray['text'] = '&gt;&gt;';
-					$pageArray['link'] = $this->modx->makeUrl($id, '',$parameters,$urlScheme);
-					$pagination .= $this->getChunk($pageNextTpl,$pageArray);
-				}
-				$parameters = $this->modx->request->getParameters();
-				$parameters = array_merge($parameters,array(
-					$searchOffset => $pageArray['offset'],
-					$searchIndex => $searchString,
-				));
-				$pageArray['text'] = 'Last';
-				$pageArray['link'] = $this->modx->makeUrl($id, '',$parameters,$urlScheme);
-				$pagination .= $this->getChunk($pageLastTpl,$pageArray);
-			}
+            $currentOffset = $this->modx->getOption($searchOffset, $_GET, 0);
+            if ($pageLimit > 0 && $i + 1 == 1 && $pageArray['offset'] != $currentOffset && !empty($pageFirstTpl)) {
+                $parameters = $this->modx->request->getParameters();
+                $parameters = array_merge($parameters, array(
+                    $searchOffset => $pageArray['offset'],
+                    $searchIndex => $searchString,
+                ));
+                $pageArray['text'] = 'First';
+                $pageArray['link'] = $this->modx->makeUrl($id, '', $parameters, $urlScheme);
+                $pagination .= $this->getChunk($pageFirstTpl, $pageArray);
+                if (!empty($pagePrevTpl) && ($currentOffset - $perPage) >= $perPage) {
+                    $parameters = $this->modx->request->getParameters();
+                    $parameters = array_merge($parameters, array(
+                        $searchOffset => $currentOffset - $perPage,
+                        $searchIndex => $searchString,
+                    ));
+                    $pageArray['text'] = '&lt;&lt;';
+                    $pageArray['link'] = $this->modx->makeUrl($id, '', $parameters, $urlScheme);
+                    $pagination .= $this->getChunk($pagePrevTpl, $pageArray);
+                }
+            }
+            if (empty($pageLimit) || ($pageArray['offset'] >= $currentOffset - ($pageLimit * $perPage) && $pageArray['offset'] <= $currentOffset + ($pageLimit * $perPage))) {
+                if ($currentOffset == $pageArray['offset']) {
+                    $pageArray['text'] = $i + 1;
+                    $pageArray['link'] = $i + 1;
+                    $pagination .= $this->getChunk($currentPageTpl, $pageArray);
+                } else {
+                    $parameters = $this->modx->request->getParameters();
+                    $parameters = array_merge($parameters, array(
+                        $searchOffset => $pageArray['offset'],
+                        $searchIndex => $searchString,
+                    ));
+                    $pageArray['text'] = $i + 1;
+                    $pageArray['link'] = $this->modx->makeUrl($id, '', $parameters, $urlScheme);
+                    $pagination .= $this->getChunk($pageTpl, $pageArray);
+                }
+            }
+            if ($pageLimit > 0 && $i + 1 == $pageLinkCount && $pageArray['offset'] != $currentOffset && !empty($pageLastTpl)) {
+                if (!empty($pageNextTpl) && ($currentOffset + $perPage) <= $total) {
+                    $parameters = $this->modx->request->getParameters();
+                    $parameters = array_merge($parameters, array(
+                        $searchOffset => $currentOffset + $perPage,
+                        $searchIndex => $searchString,
+                    ));
+                    $pageArray['text'] = '&gt;&gt;';
+                    $pageArray['link'] = $this->modx->makeUrl($id, '', $parameters, $urlScheme);
+                    $pagination .= $this->getChunk($pageNextTpl, $pageArray);
+                }
+                $parameters = $this->modx->request->getParameters();
+                $parameters = array_merge($parameters, array(
+                    $searchOffset => $pageArray['offset'],
+                    $searchIndex => $searchString,
+                ));
+                $pageArray['text'] = 'Last';
+                $pageArray['link'] = $this->modx->makeUrl($id, '', $parameters, $urlScheme);
+                $pagination .= $this->getChunk($pageLastTpl, $pageArray);
+            }
             if ($i < $pageLinkCount) {
                 $pagination .= $separator;
             }
         }
-        return trim($pagination,$separator);
+        return trim($pagination, $separator);
     }
 
     /**
@@ -292,7 +301,8 @@ class SimpleSearch {
      * @param string $text The text to sanitize
      * @return string The sanitized text
      */
-    public function sanitize($text) {
+    public function sanitize($text)
+    {
         $text = strip_tags($text);
         $text = preg_replace('/(\[\[\+.*?\]\])/iu', '', $text);
         return $this->modx->stripTags($text);
@@ -307,16 +317,17 @@ class SimpleSearch {
      * @param string $ellipsis The ellipsis to use to wrap around the extract.
      * @return string The generated extract.
      */
-    public function createExtract($text, $length = 200,$search = '',$ellipsis = '...') {
+    public function createExtract($text, $length = 200, $search = '', $ellipsis = '...')
+    {
         $text = trim(preg_replace('/\s+/u', ' ', $this->sanitize($text)));
         if (empty($text)) return '';
 
-        $useMb = $this->modx->getOption('use_multibyte',null,false) && function_exists('mb_strlen');
-        $encoding = $this->modx->getOption('modx_charset',null,'UTF-8');
+        $useMb = $this->modx->getOption('use_multibyte', null, false) && function_exists('mb_strlen');
+        $encoding = $this->modx->getOption('modx_charset', null, 'UTF-8');
 
         $trimChars = "\t\r\n -_()!~?=+/*\\,.:;\"'[]{}`&";
         if (empty($search)) {
-            $stringLength = $useMb ? mb_strlen($text,$encoding) : strlen($text);
+            $stringLength = $useMb ? mb_strlen($text, $encoding) : strlen($text);
             $end = ($length - 1) > $stringLength ? $stringLength : ($length - 1);
             if ($useMb) {
                 $pos = min(mb_strpos($text, ' ', $end, $encoding), mb_strpos($text, '.', $end, $encoding));
@@ -324,43 +335,45 @@ class SimpleSearch {
                 $pos = min(strpos($text, ' ', $end), strpos($text, '.', $end));
             }
             if ($pos) {
-                return rtrim($useMb ? mb_substr($text,0,$pos,$encoding) : substr($text,0,$pos), $trimChars) . $ellipsis;
+                return rtrim($useMb ? mb_substr($text, 0, $pos, $encoding) : substr($text, 0, $pos), $trimChars) . $ellipsis;
             } else {
                 return $text;
             }
         }
 
         if ($useMb) {
-            $wordPos = mb_strpos(mb_strtolower($text,$encoding), mb_strtolower($search,$encoding),null,$encoding);
+            $wordPos = mb_strpos(mb_strtolower($text, $encoding), mb_strtolower($search, $encoding), null, $encoding);
             $halfSide = intval($wordPos - $length / 2 + mb_strlen($search, $encoding) / 2);
             if ($halfSide > 0) {
                 $halfText = mb_substr($text, 0, $halfSide, $encoding);
                 $pos_start = max(mb_strrpos($halfText, ' ', 0, $encoding), mb_strrpos($halfText, '.', 0, $encoding));
                 if (!$pos_start) {
-                  $pos_start = 0;
+                    $pos_start = 0;
                 }
             } else {
                 $pos_start = 0;
             }
             if ($wordPos && $halfSide > 0) {
                 $l = $pos_start + $length - 1;
-                $realLength = mb_strlen($text,$encoding);
-                if ($l > $realLength) { $l = $realLength; }
-                $pos_end = min(mb_strpos($text, ' ',$l, $encoding), mb_strpos($text, '.', $l, $encoding)) - $pos_start;
+                $realLength = mb_strlen($text, $encoding);
+                if ($l > $realLength) {
+                    $l = $realLength;
+                }
+                $pos_end = min(mb_strpos($text, ' ', $l, $encoding), mb_strpos($text, '.', $l, $encoding)) - $pos_start;
                 if (!$pos_end || $pos_end <= 0) {
-                  $extract = $ellipsis . ltrim(mb_substr($text, $pos_start, mb_strlen($text, $encoding), $encoding), $trimChars);
+                    $extract = $ellipsis . ltrim(mb_substr($text, $pos_start, mb_strlen($text, $encoding), $encoding), $trimChars);
                 } else {
-                  $extract = $ellipsis . trim(mb_substr($text, $pos_start, $pos_end, $encoding), $trimChars) . $ellipsis;
+                    $extract = $ellipsis . trim(mb_substr($text, $pos_start, $pos_end, $encoding), $trimChars) . $ellipsis;
                 }
             } else {
                 $l = $length - 1;
-                $trueLength = mb_strlen($text,$encoding);
+                $trueLength = mb_strlen($text, $encoding);
                 if ($l > $trueLength) $l = $trueLength;
-                $pos_end = min(mb_strpos($text, ' ',$l, $encoding), mb_strpos($text, '.', $l, $encoding));
+                $pos_end = min(mb_strpos($text, ' ', $l, $encoding), mb_strpos($text, '.', $l, $encoding));
                 if ($pos_end) {
-                  $extract = rtrim(mb_substr($text, 0, $pos_end, $encoding), $trimChars) . $ellipsis;
+                    $extract = rtrim(mb_substr($text, 0, $pos_end, $encoding), $trimChars) . $ellipsis;
                 } else {
-                  $extract = $text;
+                    $extract = $text;
                 }
             }
         } else {
@@ -370,7 +383,7 @@ class SimpleSearch {
                 $halfText = substr($text, 0, $halfSide);
                 $pos_start = max(strrpos($halfText, ' '), strrpos($halfText, '.'));
                 if (!$pos_start) {
-                  $pos_start = 0;
+                    $pos_start = 0;
                 }
             } else {
                 $pos_start = 0;
@@ -378,19 +391,21 @@ class SimpleSearch {
             if ($wordPos && $halfSide > 0) {
                 $l = $pos_start + $length - 1;
                 $realLength = strlen($text);
-                if ($l > $realLength) { $l = $realLength; }
+                if ($l > $realLength) {
+                    $l = $realLength;
+                }
                 $pos_end = min(strpos($text, ' ', $l), strpos($text, '.', $l)) - $pos_start;
                 if (!$pos_end || $pos_end <= 0) {
-                  $extract = $ellipsis . ltrim(substr($text, $pos_start), $trimChars);
+                    $extract = $ellipsis . ltrim(substr($text, $pos_start), $trimChars);
                 } else {
-                  $extract = $ellipsis . trim(substr($text, $pos_start, $pos_end), $trimChars) . $ellipsis;
+                    $extract = $ellipsis . trim(substr($text, $pos_start, $pos_end), $trimChars) . $ellipsis;
                 }
             } else {
                 $pos_end = min(strpos($text, ' ', $length - 1), strpos($text, '.', $length - 1));
                 if ($pos_end) {
-                  $extract = rtrim(substr($text, 0, $pos_end), $trimChars) . $ellipsis;
+                    $extract = rtrim(substr($text, 0, $pos_end), $trimChars) . $ellipsis;
                 } else {
-                  $extract = $text;
+                    $extract = $text;
                 }
             }
         }
@@ -406,11 +421,12 @@ class SimpleSearch {
      * @param string $tag The type of HTML tag to wrap with
      * @return string The highlighted string
      */
-    public function addHighlighting($string, $cls = 'sisea-highlight',$tag = 'span') {
+    public function addHighlighting($string, $cls = 'sisea-highlight', $tag = 'span')
+    {
         $searchStrings = explode(' ', $this->searchString);
         foreach ($searchStrings as $searchString) {
             $quoteValue = preg_quote($searchString, '/');
-            $string = preg_replace('/' . $quoteValue . '/iu', '<'.$tag.' class=".$cls.">$0</'.$tag.'>', $string);
+            $string = preg_replace('/' . $quoteValue . '/iu', '<' . $tag . ' class=".$cls.">$0</' . $tag . '>', $string);
         }
         return $string;
     }
@@ -422,11 +438,14 @@ class SimpleSearch {
      * @param boolean $toPlaceholder
      * @return string
      */
-    public function output($output = '',$toPlaceholder = false) {
+    public function output($output = '', $toPlaceholder = false)
+    {
         if (!empty($toPlaceholder)) {
-            $this->modx->setPlaceholder($toPlaceholder,$output);
+            $this->modx->setPlaceholder($toPlaceholder, $output);
             return '';
-        } else { return $output; }
+        } else {
+            return $output;
+        }
     }
 
 
@@ -439,13 +458,14 @@ class SimpleSearch {
      * hooks class
      * @return siHooks An instance of the fiHooks class.
      */
-    public function loadHooks($type = 'post',$config = array()) {
-        if (!$this->modx->loadClass('simplesearch.siHooks',$this->config['modelPath'],true,true)) {
-            $this->modx->log(modX::LOG_LEVEL_ERROR,'[SimpleSearch] Could not load Hooks class.');
+    public function loadHooks($type = 'post', $config = array())
+    {
+        if (!$this->modx->loadClass('simplesearch.siHooks', $this->config['modelPath'], true, true)) {
+            $this->modx->log(modX::LOG_LEVEL_ERROR, '[SimpleSearch] Could not load Hooks class.');
             return false;
         }
-        $type = $type.'Hooks';
-        $this->$type = new siHooks($this,$config);
+        $type = $type . 'Hooks';
+        $this->$type = new siHooks($this, $config);
         return $this->$type;
     }
 }

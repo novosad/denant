@@ -10,6 +10,14 @@ if($modx->context->get('key') != "mgr"){
                 'url3' => '10'
             );
             break;
+        case 'fr':
+            /* switch the context */
+            $placeholders = array(
+                'url1' => '18',
+                'url2' => '20' ,
+                'url3' => '22'
+            );
+            break;    
         default:
             /* Set the default context here */
             $placeholders = array(
